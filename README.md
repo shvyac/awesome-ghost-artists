@@ -4,7 +4,7 @@ Apple Music links for artists in the 4Rabbit scene and related indie artists.
 
 ## Overview
 
-This collection features Apple Music links for 4Rabbit and similar artists across two distinct music clusters. This scene appears to be primarily composed of independent artists using generative AI as a production tool.
+This collection features Apple Music links for 4Rabbit and similar artists across two distinct music clusters. This scene appears to be primarily composed of independent artists using generative AI[...]
 
 ## Artists
 
@@ -23,6 +23,7 @@ This collection features Apple Music links for 4Rabbit and similar artists acros
 - **kami xxvoice** https://music.apple.com/us/artist/kami-xxvoice/1834610583
 - **Lunova** https://music.apple.com/us/artist/lunova/1809312080
 - **Lir** https://music.apple.com/us/artist/lir/1814608043
+- **ぽんすけ** https://music.apple.com/jp/artist/%E3%81%BD%E3%82%93%E3%81%99%E3%81%91/1506847368
 
 #### Similar Artists
 - **&N** https://music.apple.com/us/artist/n/1819398764
@@ -80,4 +81,4 @@ This is a community-maintained list of Apple Music links for discovering artists
 
 ---
 
-*Last updated: 2026-08-17*
+*Last updated: 2026-08-22*
