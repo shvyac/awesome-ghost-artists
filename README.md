@@ -24,6 +24,7 @@ This collection features Apple Music links for 4Rabbit and similar artists acros
 - **Lunova** https://music.apple.com/us/artist/lunova/1809312080
 - **Lir** https://music.apple.com/us/artist/lir/1814608043
 - **ぽんすけ** https://music.apple.com/jp/artist/%E3%81%BD%E3%82%93%E3%81%99%E3%81%91/1506847368
+- **hotaru** https://music.apple.com/jp/artist/hotaru/1834989113
 
 #### Similar Artists
 - **&N** https://music.apple.com/us/artist/n/1819398764
