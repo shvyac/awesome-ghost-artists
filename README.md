@@ -36,6 +36,26 @@ This collection features Apple Music links for 4Rabbit and similar artists acros
 - **NN Music Works** https://music.apple.com/us/artist/nn-music-works/1855418612
 - **MsReon** https://music.apple.com/us/artist/msreon/1834776078
 
+#### Additional Discovered Artists (via Apple Music "similar artists" graph crawl)
+- **CONASUKE** https://music.apple.com/us/artist/conasuke/1843130680
+- **HEARTCRASH** https://music.apple.com/us/artist/heartcrash/1830214959
+- **Bluebird Queen** https://music.apple.com/us/artist/bluebird-queen/1833066915
+- **Super Sloth Man** https://music.apple.com/us/artist/super-sloth-man/1829707369
+- **kurome** https://music.apple.com/us/artist/kurome/1855762126
+- **Arise** https://music.apple.com/us/artist/arise/1832642948
+- **NOVA** https://music.apple.com/us/artist/nova/1561102833
+- **NicoReo** https://music.apple.com/jp/artist/nicoreo/1841303455
+- **Elonaire** https://music.apple.com/us/artist/elonaire/1843447573
+- **ZEROKO** https://music.apple.com/us/artist/zeroko/1888689066
+- **Nowa** https://music.apple.com/jp/artist/nowa/1878928538
+- **REEMARI** https://music.apple.com/us/artist/reemari/1892768745
+- **RIMI** https://music.apple.com/us/artist/rimi/1258198538
+- **青羽-Aoha** https://music.apple.com/us/artist/青羽-aoha/1896345265
+- **Kawasaki.Rio** https://music.apple.com/us/artist/kawasaki-rio/1807943796
+- **Sola Nia** https://music.apple.com/us/artist/sola-nia/1828100388
+- **Rhèa-レア-** https://music.apple.com/jp/artist/rhèa-レア-/1857393791
+- **MAMA** https://music.apple.com/us/artist/mama/1884777117 *(low confidence — sparse data)*
+
 ### YORISHIRO系（和風祈祷クラスタ）
 
 #### Namesake Artist
@@ -81,6 +101,8 @@ Several artists in this scene explicitly identify as AI creators:
 ### Search Notes
 - **EchoRhythms** could not be reliably identified on Apple Music (only one single found)
 - **Echo Scroll** Apple Music page not reliably identifiable (limited search index)
+- **Rurqie** appears as a "similar artist" of Elonaire (song "ぬくもりが消える前に" confirmed via Tunebat) but no reliable Apple Music artist page URL could be confirmed
+- A 2-hop "similar artists" graph crawl from the Piyoking系 cluster surfaced ~18 new likely members (added above) but found **no crossover** into the YORISHIRO系 cluster — the two scenes appear isolated from each other in Apple Music's recommendation graph within 2 hops
 
 ## Disclaimer
 
