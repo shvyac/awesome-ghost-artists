@@ -10,6 +10,9 @@ This collection features Apple Music links for 4Rabbit and similar artists acros
 
 ### Piyoking系（恋愛J-POP/R&B）
 
+#### Namesake Artist
+- **Piyoking** https://music.apple.com/us/artist/piyoking/1850436700
+
 #### Core Artist
 - **4Rabbit** https://music.apple.com/us/artist/4rabbit/1830244334
 
@@ -34,6 +37,9 @@ This collection features Apple Music links for 4Rabbit and similar artists acros
 - **MsReon** https://music.apple.com/us/artist/msreon/1834776078
 
 ### YORISHIRO系（和風祈祷クラスタ）
+
+#### Namesake Artist
+- **YORISHIRO – 神の宿る場** https://music.apple.com/us/artist/yorishiro-%E7%A5%9E%E3%81%AE%E5%AE%BF%E3%82%8B%E5%A0%B4/1852408679
 
 #### 龍神・神道モチーフ
 - **KAGURA / 華龍KAGURA** (龍神・八大龍王) https://music.apple.com/es/artist/kagura/1803377085
