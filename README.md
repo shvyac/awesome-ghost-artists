@@ -8,7 +8,7 @@ This collection features Apple Music links for 4Rabbit and similar artists acros
 
 ## Artists
 
-### Piyoking系（恋愛J-POP/R&B）
+### 恋愛J-POP/R&B系
 
 #### Namesake Artist
 - **Piyoking** https://music.apple.com/us/artist/piyoking/1850436700
@@ -49,14 +49,13 @@ This collection features Apple Music links for 4Rabbit and similar artists acros
 - **ZEROKO** https://music.apple.com/us/artist/zeroko/1888689066
 - **Nowa** https://music.apple.com/jp/artist/nowa/1878928538
 - **REEMARI** https://music.apple.com/us/artist/reemari/1892768745
-- **RIMI** https://music.apple.com/us/artist/rimi/1258198538
 - **青羽-Aoha** https://music.apple.com/us/artist/青羽-aoha/1896345265
 - **Kawasaki.Rio** https://music.apple.com/us/artist/kawasaki-rio/1807943796
 - **Sola Nia** https://music.apple.com/us/artist/sola-nia/1828100388
 - **Rhèa-レア-** https://music.apple.com/jp/artist/rhèa-レア-/1857393791
 - **MAMA** https://music.apple.com/us/artist/mama/1884777117 *(low confidence — sparse data)*
 
-### YORISHIRO系（和風祈祷クラスタ）
+### 和風祈祷クラスタ系
 
 #### Namesake Artist
 - **YORISHIRO – 神の宿る場** https://music.apple.com/us/artist/yorishiro-%E7%A5%9E%E3%81%AE%E5%AE%BF%E3%82%8B%E5%A0%B4/1852408679
@@ -80,13 +79,13 @@ This collection features Apple Music links for 4Rabbit and similar artists acros
 
 ## Notes
 
-### Scene Characteristics - Piyoking系
+### Scene Characteristics - 恋愛J-POP/R&B系
 - High volume of releases
 - Consistent cover art aesthetic
 - Specific song title trends (love songs, J-POP/R&B focus)
 - AI composition tool usage (likely Suno or similar)
 
-### Scene Characteristics - YORISHIRO系
+### Scene Characteristics - 和風祈祷クラスタ系
 - Shared spiritual/folk motifs: 祝詞・真言・龍神・妖怪・アイヌ文化
 - Individual projects loosely connected through Japanese spirituality themes
 - AI used as production supplementary tool, not primary creator
