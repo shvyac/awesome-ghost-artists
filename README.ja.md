@@ -2,14 +2,14 @@
 
 [English README](README.md)
 
-配信ネイティブ／いわゆる「ゴーストアーティスト」周辺の indie シーン向け Apple Music リンク集。公開プロフィールが薄い、生成AIを前面または補助に使うプロジェクトが多いです。
+配信ネイティブ／いわゆる「ゴーストアーティスト」周辺の indie シーン向け Apple Music・Spotify リンク集。公開プロフィールが薄い、生成AIを前面または補助に使うプロジェクトが多いです。
 
 ## クラスタの考え方
 
 ここでの分類は**厳密なジャンル名ではありません**。次の2つを根拠にしています。
 
 1. Apple Music「似ているアーティスト」グラフの孤立（Soft Melodic と Wa Spiritual はおおよそ2ホップ以内でほぼ交差しない）
-2. 聴き分けプレイリスト（[shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB)、[shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)）
+2. 聴き分けプレイリスト — 先に Apple Music、あれば Spotify（[shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → [Spotify](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)、[shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)）
 
 | クラスタ | 入口 | 聴感 |
 | --- | --- | --- |
@@ -135,8 +135,13 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ## 参考プレイリスト
 
-- Soft寄り: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB)（67曲）
-- Hard寄り: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)（6曲）
+### Soft寄り（`shvyac.female.ai`）
+1. Apple Music: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB)（67曲）
+2. Spotify: [shvyac.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)（61曲）
+
+### Hard寄り（`shvyac.hard.ai`）
+1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)（6曲）
+2. Spotify: _まだ未追加_
 
 ---
 
@@ -150,7 +155,7 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ## 免責
 
-コミュニティメンテの発見用リンク集です。シーンの変化は速く、AI帰属はベストエフォートです。最終更新時点の情報に基づきます。
+コミュニティメンテの発見用リンク集です（Apple Music・Spotify）。シーンの変化は速く、AI帰属はベストエフォートです。最終更新時点の情報に基づきます。
 
 ---
 

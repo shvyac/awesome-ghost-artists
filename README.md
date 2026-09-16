@@ -2,14 +2,14 @@
 
 [日本語版はこちら / Japanese](README.ja.md)
 
-Apple Music links for emerging “ghost artist” / delivery-native indie scenes — often AI-assisted or AI-forward projects with thin public identity.
+Apple Music and Spotify links for emerging “ghost artist” / delivery-native indie scenes — often AI-assisted or AI-forward projects with thin public identity.
 
 ## How clustering works
 
 Clusters are **not** strict genre labels. They come from:
 
 1. Apple Music “similar artists” graph isolation (Soft Melodic ↔ Wa Spiritual barely cross within ~2 hops)
-2. Curator listening splits in playlists ([shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB), [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq))
+2. Curator listening splits in playlists — Apple Music first, then Spotify where available ([shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → [Spotify](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW), [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq))
 
 | Cluster | Entry artists | Feel |
 | --- | --- | --- |
@@ -135,8 +135,13 @@ Apply alongside A/B/C when known:
 
 ## Reference playlists
 
-- Soft-leaning: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) (67 tracks)
-- Hard-leaning: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq) (6 tracks)
+### Soft-leaning (`shvyac.female.ai`)
+1. Apple Music: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) (67 tracks)
+2. Spotify: [shvyac.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW) (61 tracks)
+
+### Hard-leaning (`shvyac.hard.ai`)
+1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq) (6 tracks)
+2. Spotify: _not added yet_
 
 ---
 
@@ -150,7 +155,7 @@ Apply alongside A/B/C when known:
 
 ## Disclaimer
 
-Community-maintained discovery list of Apple Music links. Scenes move fast; treat AI attributions as best-effort. Accuracy as of last update.
+Community-maintained discovery list of Apple Music and Spotify links. Scenes move fast; treat AI attributions as best-effort. Accuracy as of last update.
 
 ---
 
