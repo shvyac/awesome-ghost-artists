@@ -48,6 +48,8 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 - **Djbouya** https://music.apple.com/tz/artist/djbouya/1816051602
 - **NN Music Works** https://music.apple.com/us/artist/nn-music-works/1855418612
 - **MsReon** https://music.apple.com/us/artist/msreon/1834776078
+- **Cyana / シアナ** https://music.apple.com/jp/artist/%E3%82%B7%E3%82%A2%E3%83%8A/1887032103 *(AI singer × producer RoUGe; Suno / Gemini)*
+- **MINORI** https://music.apple.com/jp/artist/minori/1136952961 *(Project Minori / JLINE — AI singer, gentle J-Pop / electronic)*
 
 ### Graph periphery
 *(Apple Music similar-artists crawl, ~2 hops from the entry pair)*
@@ -60,6 +62,7 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 - **NOVA** https://music.apple.com/us/artist/nova/1561102833
 - **NicoReo** https://music.apple.com/jp/artist/nicoreo/1841303455
 - **Elonaire** https://music.apple.com/us/artist/elonaire/1843447573
+- **Rurqie** https://music.apple.com/jp/artist/rurqie/1884873746 *(near Elonaire; soft JP love-song titles)*
 - **ZEROKO** https://music.apple.com/us/artist/zeroko/1888689066
 - **Nowa** https://music.apple.com/jp/artist/nowa/1878928538
 - **REEMARI** https://music.apple.com/us/artist/reemari/1892768745
@@ -75,7 +78,7 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 
 ## B. Hard Edge
 
-Ragga / street / high-energy. Primary home of `shvyac.hard.ai` (still a small set — keep growing from that playlist).
+Ragga / street / high-energy. Primary home of `shvyac.hard.ai` (still a small set — keep growing from that playlist + RAGGAREA similar-artists).
 
 ### Entry
 - **RAGGAREA** https://music.apple.com/jp/artist/raggarea/1833075259
@@ -83,6 +86,10 @@ Ragga / street / high-energy. Primary home of `shvyac.hard.ai` (still a small se
 ### Nearby
 - **Peromu** https://music.apple.com/jp/artist/peromu/1761492628
 - **de〜ku** https://music.apple.com/jp/artist/de-ku/1796545624
+- **WACCO** https://music.apple.com/jp/artist/wacco/1827185444 *(RAGGAREA similar; reggae)*
+- **Susano Style** https://music.apple.com/jp/artist/susano-style/1815243838 *(RAGGAREA similar; reggae / street)*
+- **Good Feeling Music** https://music.apple.com/jp/artist/good-feeling-music/1793959642 *(RAGGAREA similar; electronic / hype)*
+- **ReDia** https://music.apple.com/jp/artist/redia/1837413909 *(AI artist; dance-pop / EDM / rapid rap; SHIFT - ENTER - MUSIC)*
 
 **Scene notes:** harder drums, ragga/street language, hype titles. Soft-cluster artists may appear here for individual hard tracks — keep their home in Soft Melodic unless the catalog flips.
 
@@ -102,8 +109,9 @@ Japanese spiritual / folk / myth motifs. Largely isolated from Soft Melodic in A
 ### Wagakki × fantasy
 - **Hinomu** (和楽器×ケルト系ファンタジー) https://music.apple.com/us/artist/hinomu/1819021426
 
-### Yōkai / Japanese myth
+### Yōkai / Japanese myth / folktales
 - **Ree** (妖怪・和神話) https://music.apple.com/jp/artist/ree/1620906248
+- **Echo Scroll** (昔話・民話・歴史・幻想; SUNO credits) https://music.apple.com/jp/artist/echo-scroll/1821775828
 
 ### Ainu culture / language
 - **AI AINU** (アイヌ語・文化; AI as production assist, human vocals) https://music.apple.com/jp/artist/ai-ainu/1841344566
@@ -130,6 +138,11 @@ Apply alongside A/B/C when known:
 - **音奏羽アリナ** — profile: “AIクリエイター”
 - **3Dミュージック** — SNS: songs “AIに作ってもらった”
 - **AI AINU** — AI production assist; vocals human
+- **de〜ku** — TuneCore: “AIミュージッククリエイター”
+- **Cyana / シアナ** — AI singer × RoUGe (Suno / Gemini)
+- **MINORI** — Project Minori / JLINE AI singer
+- **ReDia** — AI artist (SHIFT - ENTER - MUSIC)
+- **Echo Scroll** — SUNO listed as composer / programming on releases
 
 ---
 
@@ -147,9 +160,9 @@ Apply alongside A/B/C when known:
 
 ## Search notes / unresolved
 
-- **EchoRhythms** — not reliably ID’d on Apple Music
-- **Echo Scroll** — page not reliably findable
-- **Rurqie** — shows near Elonaire elsewhere; no stable Apple Music artist URL confirmed
+- **EchoRhythms** — dual Apple Music artist IDs (1797827498 electronic / 1883494090 unrelated catalog); not a single reliable match
+- **Echo Scroll** — resolved → Wa Spiritual (folktales)
+- **Rurqie** — resolved → Soft Melodic graph periphery
 
 ---
 
@@ -159,4 +172,4 @@ Community-maintained discovery list of Apple Music and Spotify links. Scenes mov
 
 ---
 
-*Last updated: 2026-09-17*
+*Last updated: 2026-09-21*

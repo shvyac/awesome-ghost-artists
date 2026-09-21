@@ -48,6 +48,8 @@
 - **Djbouya** https://music.apple.com/tz/artist/djbouya/1816051602
 - **NN Music Works** https://music.apple.com/us/artist/nn-music-works/1855418612
 - **MsReon** https://music.apple.com/us/artist/msreon/1834776078
+- **Cyana / シアナ** https://music.apple.com/jp/artist/%E3%82%B7%E3%82%A2%E3%83%8A/1887032103 *（AIシンガー×プロデューサー RoUGe。Suno / Gemini）*
+- **MINORI** https://music.apple.com/jp/artist/minori/1136952961 *（Project Minori / JLINE — AIシンガー、淡い J-Pop / エレクトロ）*
 
 ### グラフ周辺
 *（入口ペアから似ているアーティストを約2ホップ辿った結果）*
@@ -60,6 +62,7 @@
 - **NOVA** https://music.apple.com/us/artist/nova/1561102833
 - **NicoReo** https://music.apple.com/jp/artist/nicoreo/1841303455
 - **Elonaire** https://music.apple.com/us/artist/elonaire/1843447573
+- **Rurqie** https://music.apple.com/jp/artist/rurqie/1884873746 *（Elonaire近傍。淡い日本語の恋愛曲タイトル）*
 - **ZEROKO** https://music.apple.com/us/artist/zeroko/1888689066
 - **Nowa** https://music.apple.com/jp/artist/nowa/1878928538
 - **REEMARI** https://music.apple.com/us/artist/reemari/1892768745
@@ -75,7 +78,7 @@
 
 ## B. Hard Edge（ハード・エッジ）
 
-ラガ／ストリート／ハイエナジー。`shvyac.hard.ai` の主な置き場（まだ少数。プレイリスト起点で増やす想定）。
+ラガ／ストリート／ハイエナジー。`shvyac.hard.ai` の主な置き場（まだ少数。プレイリスト＋RAGGAREAの似ているアーティスト起点で増やす想定）。
 
 ### 入口
 - **RAGGAREA** https://music.apple.com/jp/artist/raggarea/1833075259
@@ -83,6 +86,10 @@
 ### 近い
 - **Peromu** https://music.apple.com/jp/artist/peromu/1761492628
 - **de〜ku** https://music.apple.com/jp/artist/de-ku/1796545624
+- **WACCO** https://music.apple.com/jp/artist/wacco/1827185444 *（RAGGAREA類似。レゲエ）*
+- **Susano Style** https://music.apple.com/jp/artist/susano-style/1815243838 *（RAGGAREA類似。レゲエ／ストリート）*
+- **Good Feeling Music** https://music.apple.com/jp/artist/good-feeling-music/1793959642 *（RAGGAREA類似。エレクトロ／ハイプ寄り）*
+- **ReDia** https://music.apple.com/jp/artist/redia/1837413909 *（AIアーティスト。ダンスポップ／EDM／高速ラップ。SHIFT - ENTER - MUSIC）*
 
 **シーンメモ:** 強めのビート、ラガ／ストリート寄りの言葉遣い、気合い系タイトル。Soft 側アーティストの「硬い1曲」が hard プレイリストに入ることはある → カタログ全体がハード寄りに振れるまで所属は Soft のまま。
 
@@ -102,8 +109,9 @@
 ### 和楽器×ファンタジー
 - **Hinomu**（和楽器×ケルト系ファンタジー） https://music.apple.com/us/artist/hinomu/1819021426
 
-### 妖怪・和神話
+### 妖怪・和神話・昔話
 - **Ree**（妖怪・和神話） https://music.apple.com/jp/artist/ree/1620906248
+- **Echo Scroll**（昔話・民話・歴史・幻想。SUNOクレジットあり） https://music.apple.com/jp/artist/echo-scroll/1821775828
 
 ### アイヌ文化・言語
 - **AI AINU**（アイヌ語・文化。AIは制作補助、ボーカルは人間） https://music.apple.com/jp/artist/ai-ainu/1841344566
@@ -130,6 +138,11 @@ A/B/C に加えて、分かるときだけ付ける:
 - **音奏羽アリナ** — プロフィールで「AIクリエイター」
 - **3Dミュージック** — SNSで「AIに作ってもらった曲」
 - **AI AINU** — AIは制作補助、ボーカルは人間
+- **de〜ku** — TuneCoreで「AIミュージッククリエイター」
+- **Cyana / シアナ** — AIシンガー×RoUGe（Suno / Gemini）
+- **MINORI** — Project Minori / JLINE の AIシンガー
+- **ReDia** — AIアーティスト（SHIFT - ENTER - MUSIC）
+- **Echo Scroll** — リリースで SUNO が作曲／プログラミングとして記載
 
 ---
 
@@ -147,9 +160,9 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ## 未解決・検索メモ
 
-- **EchoRhythms** — Apple Music上で安定して特定できず
-- **Echo Scroll** — ページを安定して特定できず
-- **Rurqie** — Elonaire近傍の言及あり。安定したアーティストURLは未確認
+- **EchoRhythms** — Apple Music上で同名アーティストが複数（1797827498 エレクトロ系 / 1883494090 別カタログ）。単一の安定マッチにならない
+- **Echo Scroll** — 解決済み → Wa Spiritual（昔話・民話）
+- **Rurqie** — 解決済み → Soft Melodic グラフ周辺
 
 ---
 
@@ -159,4 +172,4 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ---
 
-*最終更新: 2026-09-17*
+*最終更新: 2026-09-21*
