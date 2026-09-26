@@ -1,6 +1,6 @@
 # Awesome Ghost Artists
 
-[日本語版はこちら / Japanese](README.ja.md)
+[日本語版はこちら / Japanese](README.ja.md) · **[Generation tools →](TOOLS.md)**
 
 Apple Music and Spotify links for emerging “ghost artist” / delivery-native indie scenes — often AI-assisted or AI-forward projects with thin public identity.
 
@@ -151,6 +151,12 @@ Japanese spiritual / folk / myth motifs. Largely isolated from Soft Melodic in A
 - **Zero Error** https://music.apple.com/us/artist/zero-error/1751450721
 
 **Scene notes:** shared spiritual/folk motifs; AI often as assist rather than sole identity; no reliable Soft↔Wa crossover in a 2-hop similar-artists crawl.
+
+---
+
+## Generation tools
+
+Which AI tools can make songs like these: commercial text-to-song (Suno v6, Lyria 3.5, ElevenLabs Music, Mureka…), open-source models on GitHub (ACE-Step 1.5, YuE, SongGeneration…), AI singing synths (Synthesizer V, VOCALOID6, NEUTRINO…), and post-production. → **[TOOLS.md](TOOLS.md)**
 
 ---
 

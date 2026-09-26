@@ -1,6 +1,6 @@
 # Awesome Ghost Artists（日本語）
 
-[English README](README.md)
+[English README](README.md) · **[生成ツール一覧 →](TOOLS.ja.md)**
 
 配信ネイティブ／いわゆる「ゴーストアーティスト」周辺の indie シーン向け Apple Music・Spotify リンク集。公開プロフィールが薄い、生成AIを前面または補助に使うプロジェクトが多いです。
 
@@ -151,6 +151,12 @@
 - **Zero Error** https://music.apple.com/us/artist/zero-error/1751450721
 
 **シーンメモ:** 祝詞・龍神・妖怪・アイヌなどモチーフ共有／AIは補助寄りのことが多い／似ているアーティスト2ホップでは Soft と交差なし。
+
+---
+
+## 生成ツール
+
+こうした曲を作れる AI ツールをまとめています。商用のテキスト→楽曲生成(Suno v6、Lyria 3.5、ElevenLabs Music、Mureka など)、GitHub のオープンソースモデル(ACE-Step 1.5、YuE、SongGeneration など)、AI 歌声合成(Synthesizer V、VOCALOID6、NEUTRINO など)、仕上げ用のツール。→ **[TOOLS.ja.md](TOOLS.ja.md)**
 
 ---
 
