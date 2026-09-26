@@ -70,7 +70,7 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 - **Kawasaki.Rio** https://music.apple.com/us/artist/kawasaki-rio/1807943796
 - **Sola Nia** https://music.apple.com/us/artist/sola-nia/1828100388
 - **Rhèa-レア-** https://music.apple.com/jp/artist/rhèa-レア-/1857393791
-- **MAMA** https://music.apple.com/us/artist/mama/1884777117 *(low confidence — sparse data)*
+- **MAMA** https://music.apple.com/us/artist/mama/1884777117 *(low confidence — sparse data; now also on hard playlist)*
 
 **Scene notes:** high release cadence; similar cover aesthetics; love-song title patterns; frequent AI composition tooling (e.g. Suno-like).
 
@@ -78,7 +78,7 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 
 ## B. Hard Edge
 
-Ragga / street / high-energy. Primary home of `shvyac.hard.ai` (still a small set — keep growing from that playlist + RAGGAREA similar-artists).
+Ragga / street / high-energy. Primary home of `shvyac.hard.ai` (growing — 17 tracks as of 2026-09-26; expand from that playlist + RAGGAREA similar-artists).
 
 ### Entry
 - **RAGGAREA** https://music.apple.com/jp/artist/raggarea/1833075259
@@ -90,6 +90,14 @@ Ragga / street / high-energy. Primary home of `shvyac.hard.ai` (still a small se
 - **Susano Style** https://music.apple.com/jp/artist/susano-style/1815243838 *(RAGGAREA similar; reggae / street)*
 - **Good Feeling Music** https://music.apple.com/jp/artist/good-feeling-music/1793959642 *(RAGGAREA similar; electronic / hype)*
 - **ReDia** https://music.apple.com/jp/artist/redia/1837413909 *(AI artist; dance-pop / EDM / rapid rap; SHIFT - ENTER - MUSIC)*
+
+### From `shvyac.hard.ai` (added 2026-09-26)
+- **BLACK WAGTAIL** https://music.apple.com/jp/artist/black-wagtail/1884657936
+- **Pika farm** https://music.apple.com/jp/artist/pika-farm/1894591211
+- **Suisei YORU** https://music.apple.com/jp/artist/suisei-yoru/1853216674
+- **導鎮** https://music.apple.com/jp/artist/%E5%B0%8E%E9%8E%AE/1870926124
+- **KAYA‐9** https://music.apple.com/jp/artist/kaya-9/1865937684
+- **Boost It Radio** https://music.apple.com/jp/artist/boost-it-radio/1837345801
 
 **Scene notes:** harder drums, ragga/street language, hype titles. Soft-cluster artists may appear here for individual hard tracks — keep their home in Soft Melodic unless the catalog flips.
 
@@ -149,11 +157,11 @@ Apply alongside A/B/C when known:
 ## Reference playlists
 
 ### Soft-leaning (`shvyac.female.ai`)
-1. Apple Music: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) (67 tracks)
-2. Spotify: [shvyac.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW) (61 tracks)
+1. Apple Music: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) (89 tracks)
+2. Spotify: [shvyac.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW) (66 tracks)
 
 ### Hard-leaning (`shvyac.hard.ai`)
-1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq) (6 tracks)
+1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq) (17 tracks)
 2. Spotify: _not added yet_
 
 ---
@@ -163,6 +171,8 @@ Apply alongside A/B/C when known:
 - **EchoRhythms** — dual Apple Music artist IDs (1797827498 electronic / 1883494090 unrelated catalog); not a single reliable match
 - **Echo Scroll** — resolved → Wa Spiritual (folktales)
 - **Rurqie** — resolved → Soft Melodic graph periphery
+- **shvyac.female.ai 67 → 89 tracks** — new additions not yet triaged into clusters (public page exposes only top artists)
+- **“Bassquake – Ignition”** — track 17 on shvyac.hard.ai; artist not yet identified
 
 ---
 
@@ -172,4 +182,4 @@ Community-maintained discovery list of Apple Music and Spotify links. Scenes mov
 
 ---
 
-*Last updated: 2026-09-21*
+*Last updated: 2026-09-26*

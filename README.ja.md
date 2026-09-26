@@ -70,7 +70,7 @@
 - **Kawasaki.Rio** https://music.apple.com/us/artist/kawasaki-rio/1807943796
 - **Sola Nia** https://music.apple.com/us/artist/sola-nia/1828100388
 - **Rhèa-レア-** https://music.apple.com/jp/artist/rhèa-レア-/1857393791
-- **MAMA** https://music.apple.com/us/artist/mama/1884777117 *（信頼度低・データ薄）*
+- **MAMA** https://music.apple.com/us/artist/mama/1884777117 *（信頼度低・データ薄。hard プレイリストにも登場）*
 
 **シーンメモ:** リリース頻度が高い／ジャケットの統一感／恋愛曲タイトルの型／生成AI作曲ツール利用が多い（Suno系など）。
 
@@ -78,7 +78,7 @@
 
 ## B. Hard Edge（ハード・エッジ）
 
-ラガ／ストリート／ハイエナジー。`shvyac.hard.ai` の主な置き場（まだ少数。プレイリスト＋RAGGAREAの似ているアーティスト起点で増やす想定）。
+ラガ／ストリート／ハイエナジー。`shvyac.hard.ai` の主な置き場（拡大中 — 2026-09-26 時点で17曲。プレイリスト＋RAGGAREAの似ているアーティスト起点で増やす想定）。
 
 ### 入口
 - **RAGGAREA** https://music.apple.com/jp/artist/raggarea/1833075259
@@ -90,6 +90,14 @@
 - **Susano Style** https://music.apple.com/jp/artist/susano-style/1815243838 *（RAGGAREA類似。レゲエ／ストリート）*
 - **Good Feeling Music** https://music.apple.com/jp/artist/good-feeling-music/1793959642 *（RAGGAREA類似。エレクトロ／ハイプ寄り）*
 - **ReDia** https://music.apple.com/jp/artist/redia/1837413909 *（AIアーティスト。ダンスポップ／EDM／高速ラップ。SHIFT - ENTER - MUSIC）*
+
+### `shvyac.hard.ai` から追加（2026-09-26）
+- **BLACK WAGTAIL** https://music.apple.com/jp/artist/black-wagtail/1884657936
+- **Pika farm** https://music.apple.com/jp/artist/pika-farm/1894591211
+- **Suisei YORU** https://music.apple.com/jp/artist/suisei-yoru/1853216674
+- **導鎮** https://music.apple.com/jp/artist/%E5%B0%8E%E9%8E%AE/1870926124
+- **KAYA‐9** https://music.apple.com/jp/artist/kaya-9/1865937684
+- **Boost It Radio** https://music.apple.com/jp/artist/boost-it-radio/1837345801
 
 **シーンメモ:** 強めのビート、ラガ／ストリート寄りの言葉遣い、気合い系タイトル。Soft 側アーティストの「硬い1曲」が hard プレイリストに入ることはある → カタログ全体がハード寄りに振れるまで所属は Soft のまま。
 
@@ -149,11 +157,11 @@ A/B/C に加えて、分かるときだけ付ける:
 ## 参考プレイリスト
 
 ### Soft寄り（`shvyac.female.ai`）
-1. Apple Music: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB)（67曲）
-2. Spotify: [shvyac.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)（61曲）
+1. Apple Music: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB)（89曲）
+2. Spotify: [shvyac.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)（66曲）
 
 ### Hard寄り（`shvyac.hard.ai`）
-1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)（6曲）
+1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)（17曲）
 2. Spotify: _まだ未追加_
 
 ---
@@ -163,6 +171,8 @@ A/B/C に加えて、分かるときだけ付ける:
 - **EchoRhythms** — Apple Music上で同名アーティストが複数（1797827498 エレクトロ系 / 1883494090 別カタログ）。単一の安定マッチにならない
 - **Echo Scroll** — 解決済み → Wa Spiritual（昔話・民話）
 - **Rurqie** — 解決済み → Soft Melodic グラフ周辺
+- **shvyac.female.ai 67 → 89曲** — 追加分はまだクラスタ未振り分け（公開ページでは上位アーティストしか見えない）
+- **「Bassquake – Ignition」** — shvyac.hard.ai の17曲目。アーティスト未特定
 
 ---
 
@@ -172,4 +182,4 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ---
 
-*最終更新: 2026-09-21*
+*最終更新: 2026-09-26*
