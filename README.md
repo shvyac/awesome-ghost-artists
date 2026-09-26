@@ -51,6 +51,17 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 - **Cyana / シアナ** https://music.apple.com/jp/artist/%E3%82%B7%E3%82%A2%E3%83%8A/1887032103 *(AI singer × producer RoUGe; Suno / Gemini)*
 - **MINORI** https://music.apple.com/jp/artist/minori/1136952961 *(Project Minori / JLINE — AI singer, gentle J-Pop / electronic)*
 
+### From `shvyac.female.ai` (added 2026-09-26)
+- **LiSAsong** https://music.apple.com/jp/artist/lisasong/1770222000
+- **REN'S factory** https://music.apple.com/jp/artist/rens-factory/1815812663 *(love-song singles)*
+- **ANIX** https://music.apple.com/jp/artist/anix/1839135048
+- **STAR SEEED & HIBINO RIN** https://music.apple.com/jp/song/cold-sky/1854431536 *(duo credit; collab-unit; winter / love themes)*
+- **3Dミュージック2** https://music.apple.com/jp/artist/3d%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%83%E3%82%AF2/1827824076 *(sister name of 3Dミュージック)*
+- **Luminous Angels** https://music.apple.com/ao/artist/luminous-angels/1758669030 *(frequent HAZUKI features)*
+- **葉月** https://music.apple.com/jp/artist/%E8%91%89%E6%9C%88/1668967288 *(ID match likely, not confirmed)*
+- **Locoporveda0** https://music.apple.com/gb/album/lollipop-feat-hatsune-miku-single/1860201375 *(album link; uses Hatsune Miku vocals)*
+- **HimaWari@yuno**, **REiNa**, **AVALI**, **RIMI** — *Apple Music link not resolved yet*
+
 ### Graph periphery
 *(Apple Music similar-artists crawl, ~2 hops from the entry pair)*
 - **CONASUKE** https://music.apple.com/us/artist/conasuke/1843130680
@@ -71,6 +82,17 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 - **Sola Nia** https://music.apple.com/us/artist/sola-nia/1828100388
 - **Rhèa-レア-** https://music.apple.com/jp/artist/rhèa-レア-/1857393791
 - **MAMA** https://music.apple.com/us/artist/mama/1884777117 *(low confidence — sparse data; now also on hard playlist)*
+
+### Wa-rock / J-rock motif (from `shvyac.female.ai`)
+*Female-vocal Japanese rock with oiran / yōkai / festival motifs. Sits in the soft playlist but thematically bridges to C — candidate for its own cluster if it keeps growing.*
+- **南涙** https://music.apple.com/jp/artist/%E5%8D%97%E6%B6%99/1851186531 *(誓い / Queen of Fire – 炎の女王)*
+- **Japanese Rock 緋色 -Hiiro-** https://music.apple.com/jp/album/divine-masquerade-single/1872700762 *(album link; 花魁道中 / 歌舞)*
+- **Japanese Rock AKATSUKI -暁-** https://music.apple.com/jp/artist/japanese-rock-akatsuki-%E6%9A%81/1839950918
+- **魅こと** https://music.apple.com/jp/album/%E3%81%BE%E3%82%84%E3%81%8B%E3%81%97-single/6764244140 *(album link; 花魁道中 / 百鬼夜行)*
+- **おかもん** https://music.apple.com/jp/artist/%E3%81%8A%E3%81%8B%E3%82%82%E3%82%93/1803053301 *(雷神の唄, 八尺様 — myth / urban-legend themes)*
+- **Hyper Priest** https://music.apple.com/jp/artist/hyper-priest/1839664094
+- **Yuu07** https://music.apple.com/jp/artist/yuu07/1823453534 *(workout-music series; kabuki rhythm)*
+- **開幸涼音** — *Apple Music link not resolved yet (すでに鬼ヶ島 / 盆の輪よいよい)*
 
 **Scene notes:** high release cadence; similar cover aesthetics; love-song title patterns; frequent AI composition tooling (e.g. Suno-like).
 
@@ -99,7 +121,7 @@ Ragga / street / high-energy. Primary home of `shvyac.hard.ai` (growing — 17 t
 - **KAYA‐9** https://music.apple.com/jp/artist/kaya-9/1865937684
 - **Boost It Radio** https://music.apple.com/jp/artist/boost-it-radio/1837345801
 
-**Scene notes:** harder drums, ragga/street language, hype titles. Soft-cluster artists may appear here for individual hard tracks — keep their home in Soft Melodic unless the catalog flips.
+**Scene notes:** harder drums, ragga/street language, hype titles. Soft-cluster artists may appear here for individual hard tracks — keep their home in Soft Melodic unless the catalog flips. The reverse also happens: RAGGAREA, Peromu (incl. Heart Break feat. Otto), Suisei YORU and KAYA‐9 each have softer tracks on `shvyac.female.ai`.
 
 ---
 
@@ -139,7 +161,7 @@ Apply alongside A/B/C when known:
 - `AI-primary` — artist self-IDs as AI creator (e.g. 音奏羽アリナ)
 - `AI-assist` — AI used in production; humans still central (e.g. AI AINU)
 - `AI-unknown` — default when unclear
-- `collab-unit` — multi-name projects (e.g. Bluebird Queen × Super Sloth Man)
+- `collab-unit` — multi-name projects (e.g. Bluebird Queen × Super Sloth Man, STAR SEEED & HIBINO RIN)
 - `local-dialect` — dialect / regional novelty tracks
 
 ### Explicit AI notes
@@ -171,7 +193,8 @@ Apply alongside A/B/C when known:
 - **EchoRhythms** — dual Apple Music artist IDs (1797827498 electronic / 1883494090 unrelated catalog); not a single reliable match
 - **Echo Scroll** — resolved → Wa Spiritual (folktales)
 - **Rurqie** — resolved → Soft Melodic graph periphery
-- **shvyac.female.ai 67 → 89 tracks** — new additions not yet triaged into clusters (public page exposes only top artists)
+- **shvyac.female.ai 67 → 89 tracks** — resolved → triaged into Soft Melodic + Wa-rock group (2026-09-26)
+- **Artist links still unresolved** — HimaWari@yuno, REiNa, AVALI, RIMI, 開幸涼音 (common names / no artist page found in search)
 - **“Bassquake – Ignition”** — track 17 on shvyac.hard.ai; artist not yet identified
 
 ---
