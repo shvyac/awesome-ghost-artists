@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<!--doc-only-start-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Icon Maker">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<!--doc-only-end-->
+<title>Icon Forge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=DotGothic16&family=M+PLUS+Rounded+1c:wght@400;800&family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@500;900&family=Pacifico&family=Playfair+Display:wght@700;900&family=Rampart+One&family=Righteous&family=Yusei+Magic&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<style>
+:root {
+  --bg: #EDF0F3;
+  --surface: #FFFFFF;
+  --ink: #151B22;
+  --muted: #5E6B78;
+  --line: #D6DCE3;
+  --accent: #3056D3;
+  --accent-ink: #FFFFFF;
+  --stage: #DCE2E9;
+  --wall-a: #6D83A8;
+  --wall-b: #C9A48A;
+  --radius: 12px;
+  --ui: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui, sans-serif;
+  --display: "Dela Gothic One", "Hiragino Sans", var(--ui);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0E1318; --surface: #161D25; --ink: #E6EBF0; --muted: #8C99A6;
+    --line: #27313C; --accent: #86A2FF; --accent-ink: #0E1318; --stage: #1B232D;
+    --wall-a: #22304A; --wall-b: #4A3528;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0E1318; --surface: #161D25; --ink: #E6EBF0; --muted: #8C99A6;
+  --line: #27313C; --accent: #86A2FF; --accent-ink: #0E1318; --stage: #1B232D;
+  --wall-a: #22304A; --wall-b: #4A3528;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.5 var(--ui);
+  padding-inline: 16px; padding-block: 12px 48px;
+}
+.app { max-width: 1080px; margin: 0 auto; display: grid; gap: 16px; }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h1 { font: 400 26px/1.1 var(--display); margin: 0; letter-spacing: .02em; text-wrap: balance; }
+.sub { color: var(--muted); font-size: 13px; margin: 0; }
+
+/* Preview stage */
+.stage {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--stage); border-radius: 18px; padding: 14px;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; align-items: center;
+  box-shadow: 0 1px 0 var(--line);
+}
+.big { display: grid; justify-items: center; gap: 6px; }
+#preview {
+  width: 100%; max-width: 240px; aspect-ratio: 1; touch-action: none; cursor: grab;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.22));
+}
+.hint { font-size: 11px; color: var(--muted); margin: 0; text-align: center; }
+.home {
+  border-radius: 16px; padding: 14px 10px 10px;
+  background: linear-gradient(160deg, var(--wall-a), var(--wall-b));
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px 6px; justify-items: center;
+}
+.home .tile { display: grid; justify-items: center; gap: 3px; width: 100%; }
+.home canvas, .home .ghost { width: 100%; max-width: 52px; aspect-ratio: 1; }
+.home .ghost { border-radius: 23%; background: rgba(255,255,255,.28); }
+.home .lbl { font-size: 10px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.45); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.home .lbl.dim { opacity: 0; }
+
+/* Controls */
+.controls { display: grid; gap: 14px; }
+section.card { background: var(--surface); border-radius: var(--radius); padding: 14px; display: grid; gap: 12px; border: 1px solid var(--line); }
+section.card h2 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0; font-weight: 700; }
+.row { display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; align-items: center; gap: 10px; }
+.row > label, .row > .k { font-size: 13px; color: var(--muted); }
+.val { font-variant-numeric: tabular-nums; font-size: 12px; color: var(--muted); min-width: 3.2em; text-align: right; }
+input[type="range"] { width: 100%; accent-color: var(--accent); height: 28px; }
+textarea, input[type="text"] {
+  width: 100%; font: 20px/1.3 var(--ui); color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; resize: vertical;
+}
+input[type="color"] { width: 44px; height: 34px; border: 1px solid var(--line); border-radius: 8px; padding: 2px; background: var(--surface); }
+.colors { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.sw { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(0,0,0,.15); padding: 0; cursor: pointer; }
+.seg { display: flex; background: var(--bg); border-radius: 10px; padding: 3px; gap: 3px; border: 1px solid var(--line); }
+.seg button { flex: 1; border: 0; background: transparent; color: var(--ink); font: 600 13px var(--ui); padding: 8px 4px; border-radius: 8px; cursor: pointer; min-width: 0; }
+.seg button[aria-pressed="true"] { background: var(--surface); box-shadow: 0 1px 3px rgba(0,0,0,.18); color: var(--accent); }
+.scroller { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+.chip {
+  flex: 0 0 auto; scroll-snap-align: start; border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+  border-radius: 10px; padding: 8px 12px; cursor: pointer; display: grid; justify-items: center; gap: 2px; min-width: 76px;
+}
+.chip b { font-size: 20px; font-weight: 400; line-height: 1.2; }
+.chip span { font-size: 10px; color: var(--muted); }
+.chip[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.preset { padding: 6px; min-width: 0; }
+.preset canvas { width: 56px; height: 56px; }
+.btn {
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink); font: 600 14px var(--ui);
+  border-radius: 10px; padding: 10px 14px; cursor: pointer;
+}
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn.small { padding: 6px 10px; font-size: 12px; }
+.btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.exp { display: grid; gap: 2px; text-align: left; }
+.exp small { font-weight: 400; font-size: 11px; opacity: .8; }
+.check { display: flex; gap: 8px; align-items: center; font-size: 14px; }
+.check input { width: 20px; height: 20px; accent-color: var(--accent); }
+ol.how { margin: 0; padding-left: 1.3em; color: var(--muted); font-size: 13px; display: grid; gap: 4px; max-width: 65ch; }
+ol.how b { color: var(--ink); font-weight: 600; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Export sheet */
+.sheet { position: fixed; inset: 0; z-index: 20; background: rgba(8,12,16,.55); display: grid; place-items: end center; }
+.sheet .panel {
+  background: var(--surface); width: 100%; max-width: 480px; border-radius: 18px 18px 0 0;
+  padding: 18px 16px calc(18px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 12px; justify-items: center;
+}
+.sheet img { width: min(70vw, 260px); height: auto; background: repeating-conic-gradient(#c9ced4 0 25%, #eef0f2 0 50%) 0 0/16px 16px; border-radius: 6px; -webkit-touch-callout: default; }
+.sheet p { margin: 0; font-size: 13px; color: var(--muted); text-align: center; }
+.sheet .btns { width: 100%; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 999px; font-size: 13px; z-index: 30; }
+
+@media (min-width: 900px) {
+  .app { grid-template-columns: 380px minmax(0, 1fr); align-items: start; }
+  header { grid-column: 1 / -1; }
+  .stage { grid-template-columns: 1fr; top: 16px; }
+  #preview { max-width: 300px; }
+}
+@media (max-width: 380px) {
+  .row { grid-template-columns: 64px minmax(0, 1fr) auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Icon Forge</h1>
+    <p class="sub">iPhoneのホーム画面・ロゴ用アイコンを作って画像保存</p>
+  </header>
+
+  <div class="stage" id="stage">
+    <div class="big">
+      <canvas id="preview" width="600" height="600" aria-label="アイコンのプレビュー"></canvas>
+      <p class="hint">ドラッグで文字を移動</p>
+    </div>
+    <div class="home" aria-label="ホーム画面での見え方">
+      <div class="tile"><canvas id="mini" width="156" height="156"></canvas><div class="lbl" id="miniLabel">Ghost Artists</div></div>
+      <div class="tile"><div class="ghost"></div><div class="lbl dim">-</div></div>
+      <div class="tile"><div class="ghost"></div><div class="lbl dim">-</div></div>
+      <div class="tile"><div class="ghost"></div><div class="lbl dim">-</div></div>
+      <div class="tile"><div class="ghost"></div><div class="lbl dim">-</div></div>
+      <div class="tile"><div class="ghost"></div><div class="lbl dim">-</div></div>
+      <div class="tile"><canvas id="mini2" width="156" height="156"></canvas><div class="lbl dim">-</div></div>
+      <div class="tile"><div class="ghost"></div><div class="lbl dim">-</div></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <h2>プリセット</h2>
+        <button class="btn small" id="random" type="button">おまかせ配色</button>
+      </div>
+      <div class="scroller" id="presets"></div>
+    </section>
+
+    <section class="card">
+      <h2>文字</h2>
+      <textarea id="text" rows="2" aria-label="アイコンの文字（改行で2行、絵文字も可）">GA</textarea>
+      <div class="scroller" id="fonts" aria-label="フォント"></div>
+      <div class="row"><span class="k">太さ</span>
+        <div class="seg" data-key="weight">
+          <button type="button" data-val="400">標準</button>
+          <button type="button" data-val="700">太字</button>
+          <button type="button" data-val="900">極太</button>
+        </div><span></span>
+      </div>
+      <div class="row"><label for="size">大きさ</label><input id="size" type="range" min="0.15" max="0.95" step="0.01"><span class="val" id="sizeV"></span></div>
+      <div class="row"><span class="k">色</span>
+        <div class="colors" id="textSw"><input id="textColor" type="color" aria-label="文字の色"></div><span></span>
+      </div>
+      <div class="row"><label for="dx">横位置</label><input id="dx" type="range" min="-0.5" max="0.5" step="0.005"><span class="val" id="dxV"></span></div>
+      <div class="row"><label for="dy">縦位置</label><input id="dy" type="range" min="-0.5" max="0.5" step="0.005"><span class="val" id="dyV"></span></div>
+      <div class="row"><label for="shadow">影</label><input id="shadow" type="range" min="0" max="1" step="0.01"><span class="val" id="shadowV"></span></div>
+      <div class="row"><label for="stroke">縁取り</label><input id="stroke" type="range" min="0" max="1" step="0.01">
+        <input id="strokeColor" type="color" aria-label="縁取りの色"></div>
+      <button class="btn small" type="button" id="center" style="justify-self:start">位置を中央に戻す</button>
+    </section>
+
+    <section class="card">
+      <h2>背景</h2>
+      <div class="seg" data-key="bg">
+        <button type="button" data-val="solid">単色</button>
+        <button type="button" data-val="linear">グラデ</button>
+        <button type="button" data-val="radial">放射</button>
+      </div>
+      <div class="row"><span class="k">色</span>
+        <div class="colors"><input id="c1" type="color" aria-label="背景色1"><input id="c2" type="color" aria-label="背景色2"><button class="btn small" type="button" id="swap">入れ替え</button></div><span></span>
+      </div>
+      <div class="colors" id="bgSw"></div>
+      <div class="row"><label for="angle">角度</label><input id="angle" type="range" min="0" max="360" step="1"><span class="val" id="angleV"></span></div>
+      <div class="row"><span class="k">模様</span>
+        <div class="seg" data-key="pattern">
+          <button type="button" data-val="none">なし</button>
+          <button type="button" data-val="dots">ドット</button>
+          <button type="button" data-val="stripes">斜線</button>
+          <button type="button" data-val="grid">方眼</button>
+        </div><span></span>
+      </div>
+      <label class="check"><input id="gloss" type="checkbox"> 上部に光沢をつける</label>
+    </section>
+
+    <section class="card">
+      <h2>画像</h2>
+      <p class="sub">写真やロゴ画像を背景の上に重ねられます（文字は画像の上に描かれます）。</p>
+      <div class="colors">
+        <label class="btn" for="file">画像を選ぶ</label>
+        <input id="file" type="file" accept="image/*" hidden>
+        <button class="btn" type="button" id="clearImg">画像を外す</button>
+      </div>
+      <div class="row"><label for="imgScale">拡大</label><input id="imgScale" type="range" min="0.2" max="3" step="0.01"><span class="val" id="imgScaleV"></span></div>
+      <div class="row"><label for="imgX">横位置</label><input id="imgX" type="range" min="-0.5" max="0.5" step="0.005"><span class="val" id="imgXV"></span></div>
+      <div class="row"><label for="imgY">縦位置</label><input id="imgY" type="range" min="-0.5" max="0.5" step="0.005"><span class="val" id="imgYV"></span></div>
+    </section>
+
+    <section class="card">
+      <h2>形と書き出し</h2>
+      <div class="seg" data-key="shape">
+        <button type="button" data-val="squircle">iOS</button>
+        <button type="button" data-val="rounded">角丸</button>
+        <button type="button" data-val="circle">円</button>
+        <button type="button" data-val="square">四角</button>
+      </div>
+      <div class="row"><label for="label">名前</label><input id="label" type="text" maxlength="24" style="font-size:16px"><span></span></div>
+      <div class="btns">
+        <button class="btn primary exp" type="button" data-export="1024,none"><span>iOSアイコン</span><small>1024px 正方形・角はiOSが丸める</small></button>
+        <button class="btn exp" type="button" data-export="180,none"><span>apple-touch-icon</span><small>180px 正方形・Web用</small></button>
+        <button class="btn exp" type="button" data-export="1024,shape"><span>透過ロゴ</span><small>1024px 選んだ形で切り抜き</small></button>
+        <button class="btn exp" type="button" data-export="512,circle"><span>丸アバター</span><small>512px 円形・SNS用</small></button>
+      </div>
+      <ol class="how">
+        <li><b>iOSアイコン</b>を書き出し、画像を長押しして「写真に保存」。</li>
+        <li><b>ショートカット</b>アプリで新規作成し、「Appを開く」で開きたいアプリを選ぶ。</li>
+        <li>共有ボタン →「ホーム画面に追加」→ アイコンをタップして保存した写真を選ぶ。</li>
+      </ol>
+    </section>
+  </div>
+</div>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <strong id="sheetTitle">書き出し</strong>
+    <img id="outImg" alt="書き出したアイコン画像">
+    <p>iPhone：画像を長押し →「"写真"に保存」</p>
+    <div class="btns">
+      <button class="btn primary" type="button" id="share">共有・保存</button>
+      <a class="btn" id="dl" download="icon.png" href="#" style="text-align:center;text-decoration:none">ダウンロード</a>
+    </div>
+    <button class="btn" type="button" id="closeSheet" style="width:100%">閉じる</button>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+(() => {
+  const FONTS = [
+    ['Dela Gothic One', 'デラゴシック'], ['M PLUS Rounded 1c', '丸ゴシック'], ['Zen Maru Gothic', 'やわらか丸'],
+    ['Noto Sans JP', '角ゴシック'], ['Noto Serif JP', '明朝'], ['DotGothic16', 'ドット'],
+    ['Rampart One', '立体'], ['Yusei Magic', '手書き'], ['Bebas Neue', 'Bebas'],
+    ['Righteous', 'Righteous'], ['Pacifico', 'Pacifico'], ['Playfair Display', 'Playfair']
+  ];
+  const SWATCHES = ['#FFFFFF', '#151B22', '#F3E9D2', '#FFD36E', '#FF8A5B', '#E63946', '#2A9D8F', '#3056D3', '#7B61FF', '#B8F2E6'];
+  const DEFAULT = {
+    text: 'GA', font: 'Dela Gothic One', weight: '400', size: 0.5, color: '#F3E9D2',
+    dx: 0, dy: 0, shadow: 0.35, stroke: 0, strokeColor: '#151B22',
+    bg: 'linear', c1: '#10243E', c2: '#2E7D8C', angle: 135, pattern: 'none', gloss: false,
+    imgScale: 1, imgX: 0, imgY: 0, shape: 'squircle', label: 'Ghost Artists'
+  };
+  const PRESETS = [
+    { name: 'Midnight', s: {} },
+    { name: 'Sunrise', s: { text: '朝', font: 'Noto Serif JP', weight: '900', color: '#3B1F10', c1: '#FF8A5B', c2: '#FFD36E', angle: 160, shadow: 0, size: 0.6, label: 'Morning' } },
+    { name: 'Mint', s: { text: 'M', font: 'Righteous', weight: '400', color: '#1D6B4C', bg: 'solid', c1: '#D8F3E6', pattern: 'dots', shadow: 0, size: 0.62, label: 'Mint' } },
+    { name: 'Pixel', s: { text: 'P', font: 'DotGothic16', weight: '400', color: '#BC4749', bg: 'solid', c1: '#F2E8CF', pattern: 'grid', shadow: 0, size: 0.66, label: 'Pixel' } },
+    { name: 'Ghost', s: { text: '👻', size: 0.62, bg: 'radial', c1: '#C9D3FF', c2: '#4F5FD9', shadow: 0.4, label: 'Ghost' } },
+    { name: 'Mono', s: { text: 'Aa', font: 'Playfair Display', weight: '900', color: '#FFFFFF', bg: 'solid', c1: '#111111', shadow: 0, size: 0.52, label: 'Type' } },
+    { name: 'Pop', s: { text: 'ポップ', font: 'Rampart One', weight: '400', color: '#FFFFFF', c1: '#FF5D8F', c2: '#FFB86B', angle: 200, stroke: 0.35, strokeColor: '#7A1E48', shadow: 0.2, size: 0.34, label: 'Pop' } },
+    { name: 'Neon', s: { text: 'ON\nAIR', font: 'Bebas Neue', weight: '400', color: '#5CF2D6', bg: 'radial', c1: '#23304A', c2: '#0B0F18', shadow: 0.9, size: 0.4, label: 'On Air' } }
+  ];
+  const KEY = 'iconforge.v1';
+  const $ = (id) => document.getElementById(id);
+
+  let st = { ...DEFAULT };
+  let img = null, imgSrc = null;
+  try { const saved = JSON.parse(localStorage.getItem(KEY) || 'null'); if (saved) st = { ...DEFAULT, ...saved }; } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+
+  // ---------- drawing ----------
+  function shapePath(ctx, S, shape) {
+    ctx.beginPath();
+    if (shape === 'circle') { ctx.arc(S / 2, S / 2, S / 2, 0, Math.PI * 2); return; }
+    if (shape === 'square') { ctx.rect(0, 0, S, S); return; }
+    if (shape === 'rounded') {
+      const r = S * 0.2;
+      ctx.moveTo(r, 0); ctx.arcTo(S, 0, S, S, r); ctx.arcTo(S, S, 0, S, r);
+      ctx.arcTo(0, S, 0, 0, r); ctx.arcTo(0, 0, S, 0, r); ctx.closePath(); return;
+    }
+    // iOS風スクワークル（超楕円 n=5 で近似）
+    const n = 5, r = S / 2;
+    for (let i = 0; i <= 360; i++) {
+      const t = (i / 360) * Math.PI * 2, c = Math.cos(t), s = Math.sin(t);
+      const x = r + r * Math.sign(c) * Math.pow(Math.abs(c), 2 / n);
+      const y = r + r * Math.sign(s) * Math.pow(Math.abs(s), 2 / n);
+      i ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+    }
+    ctx.closePath();
+  }
+
+  function hexA(hex, a) {
+    const h = hex.replace('#', '');
+    const n = parseInt(h.length === 3 ? h.replace(/./g, '$&$&') : h, 16);
+    return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`;
+  }
+
+  function drawPattern(ctx, S) {
+    if (st.pattern === 'none') return;
+    ctx.save();
+    ctx.fillStyle = ctx.strokeStyle = hexA(st.color, 0.16);
+    if (st.pattern === 'dots') {
+      const g = S / 11, r = S / 70;
+      for (let y = g / 2; y < S; y += g) for (let x = g / 2; x < S; x += g) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); }
+    } else if (st.pattern === 'stripes') {
+      ctx.lineWidth = S / 36;
+      for (let i = -S; i < S * 2; i += S / 12) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i + S, S); ctx.stroke(); }
+    } else if (st.pattern === 'grid') {
+      ctx.lineWidth = Math.max(1, S / 260);
+      for (let i = S / 8; i < S; i += S / 8) {
+        ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, S); ctx.moveTo(0, i); ctx.lineTo(S, i); ctx.stroke();
+      }
+    }
+    ctx.restore();
+  }
+
+  const fontStr = (px) => `${st.weight} ${px}px "${st.font}", "Hiragino Sans", sans-serif`;
+
+  function drawText(ctx, S) {
+    if (!st.text.trim()) return;
+    const lines = st.text.split('\n');
+    let fs = st.size * S;
+    ctx.font = fontStr(fs);
+    const widest = Math.max(...lines.map((l) => ctx.measureText(l).width));
+    const maxW = S * 0.88;
+    if (widest > maxW) { fs *= maxW / widest; ctx.font = fontStr(fs); }
+    const lh = fs * 1.02;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'alphabetic';
+    ctx.lineJoin = 'round';
+    const cx = S / 2 + st.dx * S;
+    const withShadow = () => {
+      ctx.shadowColor = `rgba(0,0,0,${0.15 + st.shadow * 0.35})`;
+      ctx.shadowBlur = S * 0.05 * st.shadow;
+      ctx.shadowOffsetY = S * 0.025 * st.shadow;
+    };
+    const noShadow = () => { ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0; };
+    lines.forEach((line, i) => {
+      const m = ctx.measureText(line || ' ');
+      const asc = m.actualBoundingBoxAscent || fs * 0.7, desc = m.actualBoundingBoxDescent || 0;
+      const cy = S / 2 + st.dy * S + (i - (lines.length - 1) / 2) * lh;
+      const y = cy + (asc - desc) / 2;
+      if (st.stroke > 0) {
+        if (st.shadow > 0) withShadow();
+        ctx.lineWidth = st.stroke * fs * 0.14;
+        ctx.strokeStyle = st.strokeColor;
+        ctx.strokeText(line, cx, y);
+        noShadow();
+      } else if (st.shadow > 0) withShadow();
+      ctx.fillStyle = st.color;
+      ctx.fillText(line, cx, y);
+      noShadow();
+    });
+  }
+
+  function render(ctx, S, mask) {
+    ctx.save();
+    ctx.clearRect(0, 0, S, S);
+    if (mask) { shapePath(ctx, S, mask); ctx.clip(); }
+    let fill = st.c1;
+    if (st.bg === 'linear') {
+      const a = st.angle * Math.PI / 180, vx = Math.sin(a) * S / 2, vy = -Math.cos(a) * S / 2;
+      fill = ctx.createLinearGradient(S / 2 - vx, S / 2 - vy, S / 2 + vx, S / 2 + vy);
+      fill.addColorStop(0, st.c1); fill.addColorStop(1, st.c2);
+    } else if (st.bg === 'radial') {
+      fill = ctx.createRadialGradient(S * 0.5, S * 0.38, 0, S * 0.5, S * 0.5, S * 0.75);
+      fill.addColorStop(0, st.c1); fill.addColorStop(1, st.c2);
+    }
+    ctx.fillStyle = fill;
+    ctx.fillRect(0, 0, S, S);
+    drawPattern(ctx, S);
+    if (img) {
+      const k = Math.max(S / img.naturalWidth, S / img.naturalHeight) * st.imgScale;
+      const w = img.naturalWidth * k, h = img.naturalHeight * k;
+      ctx.drawImage(img, (S - w) / 2 + st.imgX * S, (S - h) / 2 + st.imgY * S, w, h);
+    }
+    drawText(ctx, S);
+    if (st.gloss) {
+      const g = ctx.createLinearGradient(0, 0, 0, S * 0.6);
+      g.addColorStop(0, 'rgba(255,255,255,0.32)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, S, S * 0.6);
+    }
+    ctx.restore();
+  }
+
+  const pv = $('preview'), mini = $('mini'), mini2 = $('mini2');
+  function draw() {
+    render(pv.getContext('2d'), pv.width, st.shape);
+    render(mini.getContext('2d'), mini.width, 'squircle');
+    render(mini2.getContext('2d'), mini2.width, 'squircle');
+    $('miniLabel').textContent = st.label || ' ';
+  }
+  let queued = false;
+  function update() {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; draw(); save(); });
+  }
+  function loadFont() {
+    if (!document.fonts || !document.fonts.load) return;
+    document.fonts.load(fontStr(64), st.text || 'A').then(() => { update(); drawPresets(); }).catch(() => {});
+  }
+
+  // ---------- controls ----------
+  const fmt = {
+    size: (v) => Math.round(v * 100) + '%', dx: (v) => Math.round(v * 100), dy: (v) => Math.round(v * 100),
+    shadow: (v) => Math.round(v * 100), angle: (v) => v + '°', imgScale: (v) => v.toFixed(2) + '×',
+    imgX: (v) => Math.round(v * 100), imgY: (v) => Math.round(v * 100)
+  };
+  const ranges = ['size', 'dx', 'dy', 'shadow', 'stroke', 'angle', 'imgScale', 'imgX', 'imgY'];
+  const colors = ['color', 'strokeColor', 'c1', 'c2'];
+  const colorId = { color: 'textColor', strokeColor: 'strokeColor', c1: 'c1', c2: 'c2' };
+
+  function syncUI() {
+    $('text').value = st.text;
+    $('label').value = st.label;
+    $('gloss').checked = st.gloss;
+    ranges.forEach((k) => {
+      $(k).value = st[k];
+      const v = $(k + 'V'); if (v) v.textContent = fmt[k](+st[k]);
+    });
+    colors.forEach((k) => { $(colorId[k]).value = st[k]; });
+    document.querySelectorAll('.seg[data-key]').forEach((seg) => {
+      seg.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.val === String(st[seg.dataset.key]))));
+    });
+    document.querySelectorAll('#fonts .chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.font === st.font)));
+    $('angle').disabled = st.bg !== 'linear';
+    $('c2').disabled = st.bg === 'solid';
+    const hasImg = !!img;
+    ['imgScale', 'imgX', 'imgY', 'clearImg'].forEach((k) => { $(k).disabled = !hasImg; });
+  }
+
+  function set(patch) { Object.assign(st, patch); syncUI(); update(); if ('font' in patch || 'text' in patch || 'weight' in patch) loadFont(); }
+
+  ranges.forEach((k) => $(k).addEventListener('input', (e) => set({ [k]: +e.target.value })));
+  colors.forEach((k) => $(colorId[k]).addEventListener('input', (e) => set({ [k]: e.target.value })));
+  $('text').addEventListener('input', (e) => set({ text: e.target.value }));
+  $('label').addEventListener('input', (e) => set({ label: e.target.value }));
+  $('gloss').addEventListener('change', (e) => set({ gloss: e.target.checked }));
+  $('center').addEventListener('click', () => set({ dx: 0, dy: 0 }));
+  $('swap').addEventListener('click', () => set({ c1: st.c2, c2: st.c1 }));
+  document.querySelectorAll('.seg[data-key]').forEach((seg) => {
+    seg.addEventListener('click', (e) => {
+      const b = e.target.closest('button'); if (b) set({ [seg.dataset.key]: b.dataset.val });
+    });
+  });
+
+  // fonts
+  const fontsEl = $('fonts');
+  FONTS.forEach(([f, name]) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.dataset.font = f;
+    b.innerHTML = `<b style="font-family:'${f}',sans-serif">Aaあ</b><span>${name}</span>`;
+    b.addEventListener('click', () => set({ font: f }));
+    fontsEl.appendChild(b);
+  });
+
+  // swatches
+  function swatches(el, onPick) {
+    SWATCHES.forEach((c) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'sw'; b.style.background = c; b.setAttribute('aria-label', c);
+      b.addEventListener('click', () => onPick(c));
+      el.appendChild(b);
+    });
+  }
+  swatches($('textSw'), (c) => set({ color: c }));
+  swatches($('bgSw'), (c) => set({ c1: c }));
+
+  // presets
+  const presetsEl = $('presets');
+  const presetCanvases = [];
+  PRESETS.forEach((p) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip preset';
+    const c = document.createElement('canvas'); c.width = c.height = 112;
+    const s = document.createElement('span'); s.textContent = p.name;
+    b.append(c, s);
+    b.addEventListener('click', () => { img = null; imgSrc = null; set({ ...DEFAULT, ...p.s, shape: st.shape }); });
+    presetsEl.appendChild(b);
+    presetCanvases.push([c, p]);
+  });
+  function drawPresets() {
+    const keep = st, keepImg = img;
+    img = null;
+    presetCanvases.forEach(([c, p]) => { st = { ...DEFAULT, ...p.s }; render(c.getContext('2d'), c.width, 'squircle'); });
+    st = keep; img = keepImg;
+  }
+  PRESETS.forEach((p) => { if (document.fonts && p.s.font) document.fonts.load(`${p.s.weight || 400} 40px "${p.s.font}"`, p.s.text).then(drawPresets).catch(() => {}); });
+
+  // random palette
+  function hsl2hex(h, s, l) {
+    s /= 100; l /= 100;
+    const k = (n) => (n + h / 30) % 12, a = s * Math.min(l, 1 - l);
+    const f = (n) => Math.round(255 * (l - a * Math.max(-1, Math.min(k(n) - 3, 9 - k(n), 1)))).toString(16).padStart(2, '0');
+    return '#' + f(0) + f(8) + f(4);
+  }
+  $('random').addEventListener('click', () => {
+    const h = Math.floor(Math.random() * 360), dark = Math.random() < 0.6;
+    const shift = [30, 50, -40, 160][Math.floor(Math.random() * 4)];
+    set({
+      bg: ['linear', 'linear', 'radial', 'solid'][Math.floor(Math.random() * 4)],
+      c1: hsl2hex(h, 55 + Math.random() * 30, dark ? 22 : 70),
+      c2: hsl2hex((h + shift + 360) % 360, 65, dark ? 50 : 45),
+      color: dark ? hsl2hex((h + 180) % 360, 70, 88) : hsl2hex(h, 60, 18),
+      angle: Math.floor(Math.random() * 360)
+    });
+  });
+
+  // image upload
+  $('file').addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0]; if (!f) return;
+    const r = new FileReader();
+    r.onload = () => {
+      const im = new Image();
+      im.onload = () => { img = im; imgSrc = r.result; set({ imgScale: 1, imgX: 0, imgY: 0 }); };
+      im.src = r.result;
+    };
+    r.readAsDataURL(f);
+    e.target.value = '';
+  });
+  $('clearImg').addEventListener('click', () => { img = null; imgSrc = null; syncUI(); update(); });
+
+  // drag text on preview
+  let drag = null;
+  pv.addEventListener('pointerdown', (e) => { drag = { x: e.clientX, y: e.clientY, dx: st.dx, dy: st.dy }; pv.setPointerCapture(e.pointerId); });
+  pv.addEventListener('pointermove', (e) => {
+    if (!drag) return;
+    const w = pv.getBoundingClientRect().width;
+    const cl = (v) => Math.max(-0.5, Math.min(0.5, v));
+    set({ dx: cl(drag.dx + (e.clientX - drag.x) / w), dy: cl(drag.dy + (e.clientY - drag.y) / w) });
+  });
+  const endDrag = () => { drag = null; };
+  pv.addEventListener('pointerup', endDrag);
+  pv.addEventListener('pointercancel', endDrag);
+
+  // ---------- export ----------
+  let lastBlob = null;
+  function toast(msg) { const t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => { t.hidden = true; }, 2200); }
+  document.querySelectorAll('[data-export]').forEach((b) => b.addEventListener('click', () => {
+    const [size, m] = b.dataset.export.split(',');
+    const S = +size;
+    const mask = m === 'none' ? null : m === 'shape' ? st.shape : m;
+    const c = document.createElement('canvas'); c.width = c.height = S;
+    render(c.getContext('2d'), S, mask);
+    const dataUrl = c.toDataURL('image/png');
+    $('outImg').src = dataUrl;
+    const base = (st.label || 'icon').replace(/[\\/:*?"<>|\s]+/g, '-');
+    const name = `${base}-${S}${mask ? '-' + mask : ''}.png`;
+    $('dl').href = dataUrl; $('dl').download = name;
+    $('sheetTitle').textContent = `${b.querySelector('span').textContent} ・ ${S}×${S}px`;
+    lastBlob = null;
+    c.toBlob((blob) => { lastBlob = blob && new File([blob], name, { type: 'image/png' }); }, 'image/png');
+    $('sheet').hidden = false;
+  }));
+  $('share').addEventListener('click', async () => {
+    try {
+      if (lastBlob && navigator.canShare && navigator.canShare({ files: [lastBlob] })) {
+        await navigator.share({ files: [lastBlob] });
+      } else {
+        toast('共有できない環境です。画像を長押しして保存してください');
+      }
+    } catch (e) {
+      if (e && e.name !== 'AbortError') toast('共有できませんでした。画像を長押しして保存してください');
+    }
+  });
+  $('closeSheet').addEventListener('click', () => { $('sheet').hidden = true; });
+  $('sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') $('sheet').hidden = true; });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') $('sheet').hidden = true; });
+
+  syncUI();
+  draw();
+  drawPresets();
+  loadFont();
+})();
+</script>
+</body>
+</html>
