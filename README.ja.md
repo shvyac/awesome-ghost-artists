@@ -9,7 +9,7 @@
 ここでの分類は**厳密なジャンル名ではありません**。次の2つを根拠にしています。
 
 1. Apple Music「似ているアーティスト」グラフの孤立（Soft Melodic と Wa Spiritual はおおよそ2ホップ以内でほぼ交差しない）
-2. 聴き分けプレイリスト — 先に Apple Music、あれば Spotify（[shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → [Spotify](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)、[shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)）
+2. 聴き分けプレイリスト — 先に Apple Music、あれば Spotify（[shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → [Spotify](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)、[shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)、[shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv)）
 
 | クラスタ | 入口 | 聴感 |
 | --- | --- | --- |
@@ -154,6 +154,24 @@
 
 ---
 
+## 男性ボーカル（`shvyac.male.ai`）
+
+曲調のクラスタではなく**声による分け方**。男性ボーカルのプレイリストは A と B の両方にまたがるので、各アーティストの所属は元のクラスタのままにして、ここでは参照だけ載せる。
+
+### 既に他のクラスタに掲載済み
+- A. Soft Melodic: **REN'S factory**、**LiSAsong**、**MAMA**
+- B. Hard Edge: **RAGGAREA**、**Peromu**、**de〜ku**
+
+### `shvyac.male.ai` から新規（2026-09-27 追加）
+*DJ・クラブ系の名前が多い。曲調はまだ A/B に振り分けていない。*
+- **DJ.ILHAM** https://music.apple.com/jp/artist/dj-ilham/1875511198
+- **DJ Miro** https://music.apple.com/jp/artist/dj-miro/124746276 *（古いカタログID — 同じ名前の別アーティストの可能性あり）*
+- **DJ EXCUSE** https://music.apple.com/jp/artist/dj-excuse/6769915392
+- **Sound Bass** https://music.apple.com/jp/artist/sound-bass/1401532616
+- **RYU PROJECT** https://music.apple.com/jp/artist/ryu-project/1884186575
+
+---
+
 ## 生成ツール
 
 こうした曲を作れる AI ツールをまとめています。商用のテキスト→楽曲生成(Suno v6、Lyria 3.5、ElevenLabs Music、Mureka など)、GitHub のオープンソースモデル(ACE-Step 1.5、YuE、SongGeneration など)、AI 歌声合成(Synthesizer V、VOCALOID6、NEUTRINO など)、仕上げ用のツール。→ **[TOOLS.ja.md](TOOLS.ja.md)**
@@ -192,6 +210,10 @@ A/B/C に加えて、分かるときだけ付ける:
 1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)（17曲）
 2. Spotify: _まだ未追加_
 
+### 男性ボーカル（`shvyac.male.ai`）
+1. Apple Music: [shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv)（38曲）
+2. Spotify: _まだ未追加_
+
 ---
 
 ## 未解決・検索メモ
@@ -201,6 +223,7 @@ A/B/C に加えて、分かるときだけ付ける:
 - **Rurqie** — 解決済み → Soft Melodic グラフ周辺
 - **shvyac.female.ai 67 → 89曲** — 解決済み → Soft Melodic＋和ロック群に振り分け（2026-09-26）
 - **リンク未特定** — HimaWari@yuno、REiNa、AVALI、RIMI、開幸涼音（同名多数／検索でアーティストページ未発見）
+- **shvyac.male.ai** — 公開ページでは上位11アーティストしか見えないため、38曲のうち残りはまだ振り分けていない
 - **「Bassquake – Ignition」** — shvyac.hard.ai の17曲目。アーティスト未特定
 
 ---
@@ -211,4 +234,4 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ---
 
-*最終更新: 2026-09-26*
+*最終更新: 2026-09-27*

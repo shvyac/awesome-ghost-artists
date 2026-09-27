@@ -9,7 +9,7 @@ Apple Music and Spotify links for emerging “ghost artist” / delivery-native 
 Clusters are **not** strict genre labels. They come from:
 
 1. Apple Music “similar artists” graph isolation (Soft Melodic ↔ Wa Spiritual barely cross within ~2 hops)
-2. Curator listening splits in playlists — Apple Music first, then Spotify where available ([shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → [Spotify](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW), [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq))
+2. Curator listening splits in playlists — Apple Music first, then Spotify where available ([shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → [Spotify](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW), [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq), [shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv))
 
 | Cluster | Entry artists | Feel |
 | --- | --- | --- |
@@ -154,6 +154,24 @@ Japanese spiritual / folk / myth motifs. Largely isolated from Soft Melodic in A
 
 ---
 
+## Male vocals (`shvyac.male.ai`)
+
+Not a sound cluster — a **voice** split. The male-vocal playlist cuts across A and B, so artists keep their cluster home and are only cross-referenced here.
+
+### Already listed elsewhere
+- A. Soft Melodic: **REN'S factory**, **LiSAsong**, **MAMA**
+- B. Hard Edge: **RAGGAREA**, **Peromu**, **de〜ku**
+
+### New from `shvyac.male.ai` (added 2026-09-27)
+*DJ / club-leaning names; sound not yet triaged into A or B.*
+- **DJ.ILHAM** https://music.apple.com/jp/artist/dj-ilham/1875511198
+- **DJ Miro** https://music.apple.com/jp/artist/dj-miro/124746276 *(older catalog ID — may be an unrelated same-name artist)*
+- **DJ EXCUSE** https://music.apple.com/jp/artist/dj-excuse/6769915392
+- **Sound Bass** https://music.apple.com/jp/artist/sound-bass/1401532616
+- **RYU PROJECT** https://music.apple.com/jp/artist/ryu-project/1884186575
+
+---
+
 ## Generation tools
 
 Which AI tools can make songs like these: commercial text-to-song (Suno v6, Lyria 3.5, ElevenLabs Music, Mureka…), open-source models on GitHub (ACE-Step 1.5, YuE, SongGeneration…), AI singing synths (Synthesizer V, VOCALOID6, NEUTRINO…), and post-production. → **[TOOLS.md](TOOLS.md)**
@@ -192,6 +210,10 @@ Apply alongside A/B/C when known:
 1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq) (17 tracks)
 2. Spotify: _not added yet_
 
+### Male vocals (`shvyac.male.ai`)
+1. Apple Music: [shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv) (38 tracks)
+2. Spotify: _not added yet_
+
 ---
 
 ## Search notes / unresolved
@@ -201,6 +223,7 @@ Apply alongside A/B/C when known:
 - **Rurqie** — resolved → Soft Melodic graph periphery
 - **shvyac.female.ai 67 → 89 tracks** — resolved → triaged into Soft Melodic + Wa-rock group (2026-09-26)
 - **Artist links still unresolved** — HimaWari@yuno, REiNa, AVALI, RIMI, 開幸涼音 (common names / no artist page found in search)
+- **shvyac.male.ai** — only the top 11 artists are visible on the public page; the rest of the 38 tracks are not yet triaged
 - **“Bassquake – Ignition”** — track 17 on shvyac.hard.ai; artist not yet identified
 
 ---
@@ -211,4 +234,4 @@ Community-maintained discovery list of Apple Music and Spotify links. Scenes mov
 
 ---
 
-*Last updated: 2026-09-26*
+*Last updated: 2026-09-27*
