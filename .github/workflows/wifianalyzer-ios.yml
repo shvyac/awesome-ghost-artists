@@ -1,0 +1,33 @@
+name: WiFiAnalyzer iOS build
+
+on:
+  push:
+    paths:
+      - "WiFiAnalyzer/**"
+      - ".github/workflows/wifianalyzer-ios.yml"
+  pull_request:
+    paths:
+      - "WiFiAnalyzer/**"
+      - ".github/workflows/wifianalyzer-ios.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: WiFiAnalyzer
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate Xcode project
+        run: xcodegen generate
+      - name: Build for iOS Simulator
+        run: |
+          xcodebuild build \
+            -project WiFiAnalyzer.xcodeproj \
+            -scheme WiFiAnalyzer \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO
