@@ -120,6 +120,17 @@ input[type="color"] { width: 44px; height: 34px; border: 1px solid var(--line); 
 .check input { width: 20px; height: 20px; accent-color: var(--accent); }
 .h3 { font-size: 12px; font-weight: 700; color: var(--ink); margin: 4px 0 -4px; display: flex; gap: 8px; align-items: center; }
 .h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.layers { display: flex; gap: 6px; flex-wrap: wrap; }
+.layers .tab { border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 999px; padding: 6px 12px; font: 600 13px var(--ui); cursor: pointer; max-width: 11em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.layers .tab[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.layers .tab.ghosty { border-style: dashed; color: var(--muted); }
+select { font: 15px var(--ui); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; width: 100%; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.grid figure { margin: 0; display: grid; gap: 4px; cursor: pointer; }
+.grid img { width: 100%; aspect-ratio: 1; border-radius: 22%; -webkit-touch-callout: default; }
+.grid img.cut { border-radius: 0; }
+.grid figcaption { font-size: 11px; color: var(--muted); text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.btn:disabled { opacity: .55; }
 ol.how { margin: 0; padding-left: 1.3em; color: var(--muted); font-size: 13px; display: grid; gap: 4px; max-width: 65ch; }
 ol.how b { color: var(--ink); font-weight: 600; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -133,7 +144,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
 .sheet img { width: min(70vw, 260px); height: auto; background: repeating-conic-gradient(#c9ced4 0 25%, #eef0f2 0 50%) 0 0/16px 16px; border-radius: 6px; -webkit-touch-callout: default; }
 .sheet p { margin: 0; font-size: 13px; color: var(--muted); text-align: center; }
 .sheet .btns { width: 100%; }
-.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 999px; font-size: 13px; z-index: 30; }
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 999px; font-size: 13px; z-index: 30; width: max-content; max-width: calc(100vw - 32px); text-align: center; }
 
 @media (min-width: 900px) {
   .app { grid-template-columns: 380px minmax(0, 1fr); align-items: start; }
@@ -157,7 +168,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
   <div class="stage" id="stage">
     <div class="big">
       <canvas id="preview" width="600" height="600" aria-label="アイコンのプレビュー"></canvas>
-      <p class="hint">ドラッグで文字を移動</p>
+      <p class="hint">文字をタップで選択・ドラッグで移動</p>
     </div>
     <div class="home" aria-label="ホーム画面での見え方">
       <div class="tile"><canvas id="mini" width="156" height="156"></canvas><div class="lbl" id="miniLabel">Ghost Artists</div></div>
@@ -182,7 +193,9 @@ ol.how b { color: var(--ink); font-weight: 600; }
 
     <section class="card">
       <h2>文字</h2>
-      <textarea id="text" rows="2" aria-label="アイコンの文字（改行で2行、絵文字も可）">GA</textarea>
+      <div class="layers" id="layers" aria-label="テキストボックス"></div>
+      <textarea id="text" rows="3" aria-label="選択中のテキストボックスの文字（改行で複数行、絵文字も可）">GA</textarea>
+      <p class="sub">テキストボックスごとにフォント・大きさ・色・位置を変えられます。影・縁取り・3Dは全体に共通です。</p>
       <div class="scroller" id="fonts" aria-label="フォント"></div>
       <div class="row"><span class="k">太さ</span>
         <div class="seg" data-key="weight">
@@ -285,6 +298,35 @@ ol.how b { color: var(--ink); font-weight: 600; }
         <li>共有ボタン →「ホーム画面に追加」→ アイコンをタップして保存した写真を選ぶ。</li>
       </ol>
     </section>
+
+    <section class="card">
+      <h2>まとめて作成</h2>
+      <p class="sub">1行に1つ書くと、今のデザインのまま文字だけ差し替えたアイコンを一度に作ります。「/」は改行になります（例：HARD/AI）。</p>
+      <div class="row"><label for="batchTarget">差し替え</label><select id="batchTarget"></select><span></span></div>
+      <textarea id="batch" rows="6" aria-label="まとめて作る文字（1行に1つ）"></textarea>
+      <div class="row"><span class="k">背景色</span>
+        <div class="seg" data-key="batchColor">
+          <button type="button" data-val="same">同じ</button>
+          <button type="button" data-val="hue">色相をずらす</button>
+          <button type="button" data-val="random">おまかせ</button>
+        </div><span></span>
+      </div>
+      <div class="row"><span class="k">サイズ</span>
+        <div class="seg" data-key="batchSize">
+          <button type="button" data-val="1024">1024</button>
+          <button type="button" data-val="512">512</button>
+          <button type="button" data-val="180">180</button>
+        </div><span></span>
+      </div>
+      <label class="check"><input id="batchMask" type="checkbox"> 選んだ形で切り抜く（透過PNG）</label>
+      <button class="btn primary" type="button" id="runBatch">まとめて作成</button>
+      <div class="grid" id="batchOut"></div>
+      <p class="sub" id="batchHint" hidden>画像をタップすると1枚ずつ保存できます。「すべて共有・保存」なら一度に写真へ保存できます。</p>
+      <div class="btns" id="batchActions" hidden>
+        <button class="btn primary" type="button" id="shareAll">すべて共有・保存</button>
+        <button class="btn" type="button" id="clearBatch">結果を消す</button>
+      </div>
+    </section>
   </div>
 </div>
 
@@ -317,10 +359,27 @@ ol.how b { color: var(--ink); font-weight: 600; }
     bg: 'linear', c1: '#10243E', c2: '#2E7D8C', angle: 135, pattern: 'none', gloss: false,
     imgScale: 1, imgX: 0, imgY: 0, shape: 'squircle', label: 'Ghost Artists',
     depth: 0, depthAngle: 45, extColor: '#0B1522', shine: 0,
-    imgDepth: 0, imgFloat: 0, tiltX: 0, tiltY: 0, bg3d: 'none', bgDepth: 0.5
+    imgDepth: 0, imgFloat: 0, tiltX: 0, tiltY: 0, bg3d: 'none', bgDepth: 0.5,
+    active: 0, batch: 'AI\nClassic\nPaganini\nJAZZ\nFUSION', batchTarget: 0, batchColor: 'same', batchSize: '1024', batchMask: false
   };
+  // テキストボックスごとの設定（それ以外は全体共通）
+  const LAYER_KEYS = ['text', 'font', 'weight', 'size', 'color', 'dx', 'dy'];
+  const LAYER_DEFAULT = { text: 'GA', font: 'Dela Gothic One', weight: '400', size: 0.5, color: '#F3E9D2', dx: 0, dy: 0 };
+  function normalize(src) {
+    const s = { ...src };
+    if (Array.isArray(s.layers) && s.layers.length) s.layers = s.layers.map((l) => ({ ...LAYER_DEFAULT, ...l }));
+    else s.layers = [LAYER_KEYS.reduce((o, k) => { if (k in s) o[k] = s[k]; return o; }, { ...LAYER_DEFAULT })];
+    LAYER_KEYS.forEach((k) => { delete s[k]; });
+    s.active = Math.max(0, Math.min(s.layers.length - 1, s.active | 0));
+    return s;
+  }
+  const fromPreset = (ps) => normalize({ ...DEFAULT, ...ps });
   const PRESETS = [
     { name: 'Midnight', s: {} },
+    { name: 'Label', s: { layers: [
+      { text: 'JAZZ', font: 'Dela Gothic One', size: 0.3, color: '#D7263D', dy: -0.1 },
+      { text: 'shvyac.Music', font: 'Dela Gothic One', size: 0.16, color: '#A93BE0', dy: 0.12 }
+    ], bg: 'radial', c1: '#F7F4EC', c2: '#56606E', shadow: 0.2, label: 'Jazz' } },
     { name: 'Sunrise', s: { text: '朝', font: 'Noto Serif JP', weight: '900', color: '#3B1F10', c1: '#FF8A5B', c2: '#FFD36E', angle: 160, shadow: 0, size: 0.6, label: 'Morning' } },
     { name: 'Mint', s: { text: 'M', font: 'Righteous', weight: '400', color: '#1D6B4C', bg: 'solid', c1: '#D8F3E6', pattern: 'dots', shadow: 0, size: 0.62, label: 'Mint' } },
     { name: 'Pixel', s: { text: 'P', font: 'DotGothic16', weight: '400', color: '#BC4749', bg: 'solid', c1: '#F2E8CF', pattern: 'grid', shadow: 0, size: 0.66, label: 'Pixel' } },
@@ -335,9 +394,11 @@ ol.how b { color: var(--ink); font-weight: 600; }
   const KEY = 'iconforge.v1';
   const $ = (id) => document.getElementById(id);
 
-  let st = { ...DEFAULT };
+  let st = normalize(DEFAULT);
   let img = null, imgSrc = null;
-  try { const saved = JSON.parse(localStorage.getItem(KEY) || 'null'); if (saved) st = { ...DEFAULT, ...saved }; } catch (e) {}
+  try { const saved = JSON.parse(localStorage.getItem(KEY) || 'null'); if (saved) st = normalize({ ...DEFAULT, ...saved }); } catch (e) {}
+  const cur = () => st.layers[st.active];
+  const getV = (k) => (LAYER_KEYS.includes(k) ? cur()[k] : st[k]);
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
 
   // ---------- drawing ----------
@@ -371,7 +432,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
   function drawPattern(ctx, S) {
     if (st.pattern === 'none') return;
     ctx.save();
-    ctx.fillStyle = ctx.strokeStyle = hexA(st.color, 0.16);
+    ctx.fillStyle = ctx.strokeStyle = hexA(st.layers[0].color, 0.16);
     if (st.pattern === 'dots') {
       const g = S / 11, r = S / 70;
       for (let y = g / 2; y < S; y += g) for (let x = g / 2; x < S; x += g) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); }
@@ -387,7 +448,8 @@ ol.how b { color: var(--ink); font-weight: 600; }
     ctx.restore();
   }
 
-  const fontStr = (px) => `${st.weight} ${px}px "${st.font}", "Hiragino Sans", sans-serif`;
+  const fontStr = (L, px) => `${L.weight} ${px}px "${L.font}", "Hiragino Sans", sans-serif`;
+  let boxSink = null, lastBoxes = [];
 
   // 再利用するオフスクリーンキャンバス
   const pool = {};
@@ -464,7 +526,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
       ctx.beginPath(); ctx.rect(0, h, S, S - h); ctx.clip();
       ctx.fillStyle = `rgba(0,0,0,${0.12 + 0.18 * k})`; ctx.fillRect(0, h, S, S - h);
       const g = ctx.createLinearGradient(0, h, 0, S);
-      g.addColorStop(0, hexA(st.color, 0)); g.addColorStop(1, hexA(st.color, 0.3 + 0.55 * k));
+      g.addColorStop(0, hexA(st.layers[0].color, 0)); g.addColorStop(1, hexA(st.layers[0].color, 0.3 + 0.55 * k));
       ctx.strokeStyle = g; ctx.lineWidth = Math.max(1, S / 200);
       for (let i = -14; i <= 14; i++) { ctx.beginPath(); ctx.moveTo(vx, h); ctx.lineTo(vx + i * S * 0.2, S * 1.5); ctx.stroke(); }
       for (let i = 1; i <= 9; i++) {
@@ -473,7 +535,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
       }
       ctx.restore();
       const glow = ctx.createLinearGradient(0, h - S * 0.08, 0, h + S * 0.02);
-      glow.addColorStop(0, hexA(st.color, 0)); glow.addColorStop(1, hexA(st.color, 0.25 * k + 0.1));
+      glow.addColorStop(0, hexA(st.layers[0].color, 0)); glow.addColorStop(1, hexA(st.layers[0].color, 0.25 * k + 0.1));
       ctx.fillStyle = glow; ctx.fillRect(0, h - S * 0.08, S, S * 0.1);
     } else if (st.bg3d === 'orbs') {
       const base = st.bg === 'solid' ? st.c1 : st.c2;
@@ -492,31 +554,37 @@ ol.how b { color: var(--ink); font-weight: 600; }
 
 
   function drawTextFace(ctx, S) {
-    const lines = st.text.split('\n');
-    let fs = st.size * S;
-    ctx.font = fontStr(fs);
-    const widest = Math.max(...lines.map((l) => ctx.measureText(l).width));
-    const maxW = S * 0.88;
-    if (widest > maxW) { fs *= maxW / widest; ctx.font = fontStr(fs); }
-    const lh = fs * 1.02;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'alphabetic';
     ctx.lineJoin = 'round';
-    const cx = S / 2 + st.dx * S;
     let top = S, bottom = 0;
-    lines.forEach((line, i) => {
-      const m = ctx.measureText(line || ' ');
-      const asc = m.actualBoundingBoxAscent || fs * 0.7, desc = m.actualBoundingBoxDescent || 0;
-      const cy = S / 2 + st.dy * S + (i - (lines.length - 1) / 2) * lh;
-      const y = cy + (asc - desc) / 2;
-      top = Math.min(top, y - asc); bottom = Math.max(bottom, y + desc);
-      if (st.stroke > 0) {
-        ctx.lineWidth = st.stroke * fs * 0.14;
-        ctx.strokeStyle = st.strokeColor;
-        ctx.strokeText(line, cx, y);
-      }
-      ctx.fillStyle = st.color;
-      ctx.fillText(line, cx, y);
+    st.layers.forEach((L, li) => {
+      if (!L.text.trim()) return;
+      const lines = L.text.split('\n');
+      let fs = L.size * S;
+      ctx.font = fontStr(L, fs);
+      const widest = Math.max(...lines.map((l) => ctx.measureText(l).width));
+      const maxW = S * 0.88;
+      if (widest > maxW) { fs *= maxW / widest; ctx.font = fontStr(L, fs); }
+      const lh = fs * 1.02;
+      const cx = S / 2 + L.dx * S;
+      let lt = S, lb = 0, lw = 0;
+      lines.forEach((line, i) => {
+        const m = ctx.measureText(line || ' ');
+        const asc = m.actualBoundingBoxAscent || fs * 0.7, desc = m.actualBoundingBoxDescent || 0;
+        const cy = S / 2 + L.dy * S + (i - (lines.length - 1) / 2) * lh;
+        const y = cy + (asc - desc) / 2;
+        lt = Math.min(lt, y - asc); lb = Math.max(lb, y + desc); lw = Math.max(lw, m.width);
+        if (st.stroke > 0) {
+          ctx.lineWidth = st.stroke * fs * 0.14;
+          ctx.strokeStyle = st.strokeColor;
+          ctx.strokeText(line, cx, y);
+        }
+        ctx.fillStyle = L.color;
+        ctx.fillText(line, cx, y);
+      });
+      top = Math.min(top, lt); bottom = Math.max(bottom, lb);
+      if (boxSink) boxSink[li] = { x0: (cx - lw / 2) / S, x1: (cx + lw / 2) / S, y0: lt / S, y1: lb / S };
     });
     if (st.shine > 0) {
       // 正面にだけ光のグラデーションを重ねて、膨らんだツヤを出す
@@ -565,7 +633,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
       extrude(E.getContext('2d'), L, S, px(st.imgDepth), st.depthAngle, '#000', 0.55);
       placeLayer(ctx, E, S, 0.2 + 0.35 * st.imgFloat, S * 0.06 * st.imgFloat, S * 0.05 * st.imgFloat);
     }
-    if (st.text.trim()) {
+    if (st.layers.some((l) => l.text.trim())) {
       const L = layer('txtL', S);
       drawTextFace(L.getContext('2d'), S);
       const E = layer('txtE', S);
@@ -582,7 +650,9 @@ ol.how b { color: var(--ink); font-weight: 600; }
 
   const pv = $('preview'), mini = $('mini'), mini2 = $('mini2');
   function draw() {
+    boxSink = [];
     render(pv.getContext('2d'), pv.width, st.shape);
+    lastBoxes = boxSink; boxSink = null;
     render(mini.getContext('2d'), mini.width, 'squircle');
     render(mini2.getContext('2d'), mini2.width, 'squircle');
     $('miniLabel').textContent = st.label || ' ';
@@ -595,7 +665,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
   }
   function loadFont() {
     if (!document.fonts || !document.fonts.load) return;
-    document.fonts.load(fontStr(64), st.text || 'A').then(() => { update(); drawPresets(); }).catch(() => {});
+    Promise.all(st.layers.map((L) => document.fonts.load(fontStr(L, 64), L.text || 'A'))).then(() => { update(); drawPresets(); }).catch(() => {});
   }
 
   // ---------- controls ----------
@@ -612,18 +682,21 @@ ol.how b { color: var(--ink); font-weight: 600; }
   const colorId = { color: 'textColor', strokeColor: 'strokeColor', c1: 'c1', c2: 'c2', extColor: 'extColor' };
 
   function syncUI() {
-    $('text').value = st.text;
+    $('text').value = cur().text;
+    renderLayers();
+    $('batch').value = st.batch;
+    $('batchMask').checked = st.batchMask;
     $('label').value = st.label;
     $('gloss').checked = st.gloss;
     ranges.forEach((k) => {
-      $(k).value = st[k];
-      const v = $(k + 'V'); if (v && fmt[k]) v.textContent = fmt[k](+st[k]);
+      $(k).value = getV(k);
+      const v = $(k + 'V'); if (v && fmt[k]) v.textContent = fmt[k](+getV(k));
     });
-    colors.forEach((k) => { $(colorId[k]).value = st[k]; });
+    colors.forEach((k) => { $(colorId[k]).value = getV(k); });
     document.querySelectorAll('.seg[data-key]').forEach((seg) => {
-      seg.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.val === String(st[seg.dataset.key]))));
+      seg.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.val === String(getV(seg.dataset.key)))));
     });
-    document.querySelectorAll('#fonts .chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.font === st.font)));
+    document.querySelectorAll('#fonts .chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.font === cur().font)));
     $('angle').disabled = st.bg !== 'linear';
     $('c2').disabled = st.bg === 'solid';
     const hasImg = !!img;
@@ -631,12 +704,58 @@ ol.how b { color: var(--ink); font-weight: 600; }
     ['imgScale', 'imgX', 'imgY', 'imgDepth', 'imgFloat', 'clearImg'].forEach((k) => { $(k).disabled = !hasImg; });
   }
 
-  function set(patch) { Object.assign(st, patch); syncUI(); update(); if ('font' in patch || 'text' in patch || 'weight' in patch) loadFont(); }
+  function renderLayers() {
+    const el = $('layers');
+    el.innerHTML = '';
+    st.layers.forEach((L, i) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'tab';
+      b.textContent = `${i + 1}. ${L.text.split('\n')[0].trim() || '（空）'}`;
+      b.setAttribute('aria-pressed', String(i === st.active));
+      b.addEventListener('click', () => { st.active = i; syncUI(); save(); });
+      el.appendChild(b);
+    });
+    const add = document.createElement('button');
+    add.type = 'button'; add.className = 'tab ghosty'; add.textContent = '＋ 追加';
+    add.disabled = st.layers.length >= 6;
+    add.addEventListener('click', () => {
+      const c = cur();
+      st.layers.push({ ...c, text: 'テキスト', size: Math.min(c.size, 0.16), dy: Math.min(0.4, c.dy + 0.2) });
+      st.active = st.layers.length - 1;
+      syncUI(); update(); loadFont();
+    });
+    el.appendChild(add);
+    if (st.layers.length > 1) {
+      const del = document.createElement('button');
+      del.type = 'button'; del.className = 'tab ghosty'; del.textContent = `${st.active + 1} を削除`;
+      del.addEventListener('click', () => {
+        st.layers.splice(st.active, 1);
+        st.active = Math.min(st.active, st.layers.length - 1);
+        syncUI(); update();
+      });
+      el.appendChild(del);
+    }
+    const sel = $('batchTarget');
+    sel.innerHTML = '';
+    st.layers.forEach((L, i) => {
+      const o = document.createElement('option');
+      o.value = i; o.textContent = `${i + 1}. ${L.text.split('\n')[0].trim() || '（空）'}`;
+      sel.appendChild(o);
+    });
+    sel.value = Math.min(st.batchTarget, st.layers.length - 1);
+  }
+
+  function set(patch) {
+    Object.keys(patch).forEach((k) => { if (LAYER_KEYS.includes(k)) cur()[k] = patch[k]; else st[k] = patch[k]; });
+    syncUI(); update(); if ('font' in patch || 'text' in patch || 'weight' in patch) loadFont(); }
 
   ranges.forEach((k) => $(k).addEventListener('input', (e) => set({ [k]: +e.target.value })));
   colors.forEach((k) => $(colorId[k]).addEventListener('input', (e) => set({ [k]: e.target.value })));
   $('text').addEventListener('input', (e) => set({ text: e.target.value }));
   $('label').addEventListener('input', (e) => set({ label: e.target.value }));
+  $('batch').addEventListener('input', (e) => { st.batch = e.target.value; save(); });
+  $('batchTarget').addEventListener('change', (e) => { st.batchTarget = +e.target.value; save(); });
+  $('batchMask').addEventListener('change', (e) => { st.batchMask = e.target.checked; save(); });
   $('gloss').addEventListener('change', (e) => set({ gloss: e.target.checked }));
   $('center').addEventListener('click', () => set({ dx: 0, dy: 0 }));
   $('untilt').addEventListener('click', () => set({ tiltX: 0, tiltY: 0 }));
@@ -678,17 +797,19 @@ ol.how b { color: var(--ink); font-weight: 600; }
     const c = document.createElement('canvas'); c.width = c.height = 112;
     const s = document.createElement('span'); s.textContent = p.name;
     b.append(c, s);
-    b.addEventListener('click', () => { img = null; imgSrc = null; set({ ...DEFAULT, ...p.s, shape: st.shape }); });
+    b.addEventListener('click', () => { img = null; imgSrc = null; st = fromPreset({ ...p.s, shape: st.shape }); syncUI(); update(); loadFont(); });
     presetsEl.appendChild(b);
     presetCanvases.push([c, p]);
   });
   function drawPresets() {
     const keep = st, keepImg = img;
     img = null;
-    presetCanvases.forEach(([c, p]) => { st = { ...DEFAULT, ...p.s }; render(c.getContext('2d'), c.width, 'squircle'); });
+    presetCanvases.forEach(([c, p]) => { st = fromPreset(p.s); render(c.getContext('2d'), c.width, 'squircle'); });
     st = keep; img = keepImg;
   }
-  PRESETS.forEach((p) => { if (document.fonts && p.s.font) document.fonts.load(`${p.s.weight || 400} 40px "${p.s.font}"`, p.s.text).then(drawPresets).catch(() => {}); });
+  if (document.fonts) {
+    PRESETS.forEach((p) => fromPreset(p.s).layers.forEach((L) => document.fonts.load(fontStr(L, 40), L.text).then(drawPresets).catch(() => {})));
+  }
 
   // random palette
   function hsl2hex(h, s, l) {
@@ -725,7 +846,19 @@ ol.how b { color: var(--ink); font-weight: 600; }
 
   // drag text on preview
   let drag = null;
-  pv.addEventListener('pointerdown', (e) => { drag = { x: e.clientX, y: e.clientY, dx: st.dx, dy: st.dy }; pv.setPointerCapture(e.pointerId); });
+  pv.addEventListener('pointerdown', (e) => {
+    const r = pv.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height, pad = 0.03;
+    for (let i = lastBoxes.length - 1; i >= 0; i--) {
+      const b = lastBoxes[i];
+      if (b && x >= b.x0 - pad && x <= b.x1 + pad && y >= b.y0 - pad && y <= b.y1 + pad) {
+        if (i !== st.active) { st.active = i; syncUI(); }
+        break;
+      }
+    }
+    drag = { x: e.clientX, y: e.clientY, dx: cur().dx, dy: cur().dy };
+    pv.setPointerCapture(e.pointerId);
+  });
   pv.addEventListener('pointermove', (e) => {
     if (!drag) return;
     const w = pv.getBoundingClientRect().width;
@@ -738,6 +871,8 @@ ol.how b { color: var(--ink); font-weight: 600; }
 
   // ---------- export ----------
   let lastBlob = null;
+  function setDl(url, name) { const a = $('dl'); if (a) { a.href = url; a.download = name; } }
+  const safeName = (t) => t.replace(/[\\/:*?"<>|\s]+/g, '-').replace(/^-+|-+$/g, '') || 'icon';
   function toast(msg) { const t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => { t.hidden = true; }, 2200); }
   document.querySelectorAll('[data-export]').forEach((b) => b.addEventListener('click', () => {
     const [size, m] = b.dataset.export.split(',');
@@ -747,9 +882,9 @@ ol.how b { color: var(--ink); font-weight: 600; }
     render(c.getContext('2d'), S, mask);
     const dataUrl = c.toDataURL('image/png');
     $('outImg').src = dataUrl;
-    const base = (st.label || 'icon').replace(/[\\/:*?"<>|\s]+/g, '-');
+    const base = safeName(st.label || 'icon');
     const name = `${base}-${S}${mask ? '-' + mask : ''}.png`;
-    $('dl').href = dataUrl; $('dl').download = name;
+    setDl(dataUrl, name);
     $('sheetTitle').textContent = `${b.querySelector('span').textContent} ・ ${S}×${S}px`;
     lastBlob = null;
     c.toBlob((blob) => { lastBlob = blob && new File([blob], name, { type: 'image/png' }); }, 'image/png');
@@ -766,6 +901,87 @@ ol.how b { color: var(--ink); font-weight: 600; }
       if (e && e.name !== 'AbortError') toast('共有できませんでした。画像を長押しして保存してください');
     }
   });
+  function hex2hsl(hex) {
+    const n = parseInt(hex.replace('#', ''), 16);
+    const r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, d = mx - mn;
+    let h = 0, s = 0;
+    if (d) {
+      s = d / (1 - Math.abs(2 * l - 1));
+      h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+      h *= 60;
+    }
+    return [(h + 360) % 360, s * 100, l * 100];
+  }
+  const rotateHue = (hex, deg) => { const [h, s, l] = hex2hsl(hex); return hsl2hex((h + deg) % 360, s, l); };
+
+  let batchFiles = [];
+  $('runBatch').addEventListener('click', async () => {
+    const items = st.batch.split('\n').map((t) => t.trim()).filter(Boolean).slice(0, 40);
+    if (!items.length) { toast('1行に1つ、文字を入力してください'); return; }
+    const btn = $('runBatch'), out = $('batchOut');
+    btn.disabled = true;
+    out.innerHTML = ''; batchFiles = [];
+    $('batchActions').hidden = true; $('batchHint').hidden = true;
+    const keep = st, S = +st.batchSize, mask = st.batchMask ? st.shape : null;
+    const t = Math.min(st.batchTarget, st.layers.length - 1);
+    const texts = items.map((it) => it.replace(/\s*\/\s*/g, '\n'));
+    if (document.fonts) {
+      btn.textContent = 'フォント準備中…';
+      await Promise.all(keep.layers.map((L) => document.fonts.load(fontStr(L, 64), L.text + texts.join('')).catch(() => {})));
+    }
+    for (let i = 0; i < texts.length; i++) {
+      btn.textContent = `作成中… ${i + 1}/${texts.length}`;
+      const s = JSON.parse(JSON.stringify(keep));
+      s.layers[t].text = texts[i];
+      if (keep.batchColor === 'hue') {
+        const d = i * 360 / texts.length;
+        s.c1 = rotateHue(keep.c1, d); s.c2 = rotateHue(keep.c2, d);
+      } else if (keep.batchColor === 'random') {
+        const h = Math.random() * 360;
+        s.c1 = hsl2hex(h, 75, 68); s.c2 = hsl2hex((h + 40 + Math.random() * 80) % 360, 60, 42);
+      }
+      const c = document.createElement('canvas'); c.width = c.height = S;
+      st = s;
+      try { render(c.getContext('2d'), S, mask); } finally { st = keep; }
+      const url = c.toDataURL('image/png');
+      const name = `${String(i + 1).padStart(2, '0')}-${safeName(items[i])}-${S}.png`;
+      const blob = await new Promise((r) => c.toBlob(r, 'image/png'));
+      const file = blob ? new File([blob], name, { type: 'image/png' }) : null;
+      if (file) batchFiles.push(file);
+      const fig = document.createElement('figure');
+      const im = document.createElement('img');
+      im.src = url; im.alt = items[i]; if (mask) im.className = 'cut';
+      const cap = document.createElement('figcaption'); cap.textContent = items[i];
+      fig.append(im, cap);
+      fig.addEventListener('click', () => {
+        $('outImg').src = url; setDl(url, name); lastBlob = file;
+        $('sheetTitle').textContent = `${items[i]} ・ ${S}×${S}px`;
+        $('sheet').hidden = false;
+      });
+      out.appendChild(fig);
+      await new Promise((r) => setTimeout(r, 0));
+    }
+    btn.disabled = false; btn.textContent = 'まとめて作成';
+    $('batchActions').hidden = false; $('batchHint').hidden = false;
+    toast(`${texts.length}個のアイコンを作成しました`);
+  });
+  $('shareAll').addEventListener('click', async () => {
+    try {
+      if (batchFiles.length && navigator.canShare && navigator.canShare({ files: batchFiles })) {
+        await navigator.share({ files: batchFiles });
+      } else {
+        toast('一括共有できない環境です。画像を1枚ずつ長押しして保存してください');
+      }
+    } catch (e) {
+      if (e && e.name !== 'AbortError') toast('共有できませんでした。画像を1枚ずつ長押しして保存してください');
+    }
+  });
+  $('clearBatch').addEventListener('click', () => {
+    $('batchOut').innerHTML = ''; batchFiles = [];
+    $('batchActions').hidden = true; $('batchHint').hidden = true;
+  });
+
   $('closeSheet').addEventListener('click', () => { $('sheet').hidden = true; });
   $('sheet').addEventListener('click', (e) => { if (e.target.id === 'sheet') $('sheet').hidden = true; });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') $('sheet').hidden = true; });
