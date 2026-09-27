@@ -156,19 +156,30 @@ Japanese spiritual / folk / myth motifs. Largely isolated from Soft Melodic in A
 
 ## Male vocals (`shvyac.male.ai`)
 
-Not a sound cluster — a **voice** split. The male-vocal playlist cuts across A and B, so artists keep their cluster home and are only cross-referenced here.
+Not a sound cluster — a **voice** split (38 tracks, fully triaged 2026-09-27). The playlist cuts across A and B, so it is organized into sub-groups; artists already listed elsewhere keep their home cluster.
+
+### Club / dance — "Big Boom" collab network *(B-leaning)*
+Party / EDM tracks that credit each other (DIGIDI DIGIDI, Big Boom, Ye Ye Ye, Big Boom x Zigidi Zigidi, BIG BOOM – Sound Bass remix).
+- **DJ.ILHAM** https://music.apple.com/jp/artist/dj-ilham/1875511198 *(hub of the network)*
+- **DJ EXCUSE** https://music.apple.com/jp/artist/dj-excuse/6769915392
+- **DJ Miro** https://music.apple.com/jp/artist/dj-miro/124746276 *(co-credit on Big Boom; old catalog ID, may be a same-name artist)*
+- **Sound Bass** https://music.apple.com/jp/artist/sound-bass/1401532616 *(remixer)*
+
+### Kansai "life anthem" — Osaka dialect, grit & family *(new group, `local-dialect`)*
+Male vocals in Kansai-ben about pride, work, marriage and not giving up. Covers use hannya masks, kanji titles and the 大阪魂 label. Candidate for its own cluster.
+- **Shinzabu Wageton** — *Apple Music link not resolved yet* (10 tracks: 大和魂, やったれ大阪魂, 俺がお前を守ったるで, 明日死んでも後悔せぇへん生き… etc.)
+- **gazeru358** https://music.apple.com/jp/artist/gazeru358/6773568257 *(嫁になれ, 嫁へ, 最後まで抱きしめる, 俺の隣りで老けろ; album 喜怒哀楽)*
+- **導鎮** https://music.apple.com/jp/artist/%E5%B0%8E%E9%8E%AE/1870926124 *(労働讃歌〜名も無き誇り〜, 人生最前線〜遅咲きの花〜, 除夜のハネ feat. KAYA‐9; also in B)*
+- **MARMIN** — *link not resolved yet* (頂 feat. KING STRONG)
+
+### Male love ballads *(A-leaning)*
+- **RYU PROJECT** https://music.apple.com/jp/artist/ryu-project/1884186575 *(幸, 2 versions)*
+- **よしき** https://music.apple.com/jp/artist/%E3%82%88%E3%81%97%E3%81%8D/1819640505 *(couple / family songs: 夫婦のルール, 出会いに感謝, これからも; ID match likely)*
 
 ### Already listed elsewhere
-- A. Soft Melodic: **REN'S factory**, **LiSAsong**, **MAMA**
-- B. Hard Edge: **RAGGAREA**, **Peromu**, **de〜ku**
-
-### New from `shvyac.male.ai` (added 2026-09-27)
-*DJ / club-leaning names; sound not yet triaged into A or B.*
-- **DJ.ILHAM** https://music.apple.com/jp/artist/dj-ilham/1875511198
-- **DJ Miro** https://music.apple.com/jp/artist/dj-miro/124746276 *(older catalog ID — may be an unrelated same-name artist)*
-- **DJ EXCUSE** https://music.apple.com/jp/artist/dj-excuse/6769915392
-- **Sound Bass** https://music.apple.com/jp/artist/sound-bass/1401532616
-- **RYU PROJECT** https://music.apple.com/jp/artist/ryu-project/1884186575
+- A. Soft Melodic: **REN'S factory** (最後のキス), **LiSAsong** (愛してる君だけを)
+- A. Wa-rock: **魅こと** (新時代)
+- B. Hard Edge: **Peromu** (So Sexy Winey), **de〜ku** (TREASURES, 心ほどける色, LIFE GOES ON), **RAGGAREA** (GAME), **MAMA** (Rise Again)
 
 ---
 
@@ -186,7 +197,7 @@ Apply alongside A/B/C when known:
 - `AI-assist` — AI used in production; humans still central (e.g. AI AINU)
 - `AI-unknown` — default when unclear
 - `collab-unit` — multi-name projects (e.g. Bluebird Queen × Super Sloth Man, STAR SEEED & HIBINO RIN)
-- `local-dialect` — dialect / regional novelty tracks
+- `local-dialect` — dialect / regional tracks (e.g. Shinzabu Wageton, gazeru358 — Osaka-ben)
 
 ### Explicit AI notes
 - **音奏羽アリナ** — profile: “AIクリエイター”
@@ -223,7 +234,8 @@ Apply alongside A/B/C when known:
 - **Rurqie** — resolved → Soft Melodic graph periphery
 - **shvyac.female.ai 67 → 89 tracks** — resolved → triaged into Soft Melodic + Wa-rock group (2026-09-26)
 - **Artist links still unresolved** — HimaWari@yuno, REiNa, AVALI, RIMI, 開幸涼音 (common names / no artist page found in search)
-- **shvyac.male.ai** — only the top 11 artists are visible on the public page; the rest of the 38 tracks are not yet triaged
+- **shvyac.male.ai** — resolved → all 38 tracks triaged from screenshots (2026-09-27)
+- **Male-side links unresolved** — Shinzabu Wageton, MARMIN
 - **“Bassquake – Ignition”** — track 17 on shvyac.hard.ai; artist not yet identified
 
 ---

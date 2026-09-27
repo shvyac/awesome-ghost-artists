@@ -156,19 +156,30 @@
 
 ## 男性ボーカル（`shvyac.male.ai`）
 
-曲調のクラスタではなく**声による分け方**。男性ボーカルのプレイリストは A と B の両方にまたがるので、各アーティストの所属は元のクラスタのままにして、ここでは参照だけ載せる。
+曲調のクラスタではなく**声による分け方**（全38曲、2026-09-27 に振り分け完了）。A と B の両方にまたがるので、中をさらに小グループに分けた。他のクラスタに掲載済みのアーティストは、元のクラスタの所属のまま。
 
-### 既に他のクラスタに掲載済み
-- A. Soft Melodic: **REN'S factory**、**LiSAsong**、**MAMA**
-- B. Hard Edge: **RAGGAREA**、**Peromu**、**de〜ku**
-
-### `shvyac.male.ai` から新規（2026-09-27 追加）
-*DJ・クラブ系の名前が多い。曲調はまだ A/B に振り分けていない。*
-- **DJ.ILHAM** https://music.apple.com/jp/artist/dj-ilham/1875511198
-- **DJ Miro** https://music.apple.com/jp/artist/dj-miro/124746276 *（古いカタログID — 同じ名前の別アーティストの可能性あり）*
+### クラブ／ダンス — 「Big Boom」コラボ仲間 *（B 寄り）*
+互いにクレジットし合うパーティー／EDM 系（DIGIDI DIGIDI、Big Boom、Ye Ye Ye、Big Boom x Zigidi Zigidi、BIG BOOM の Sound Bass リミックス）。
+- **DJ.ILHAM** https://music.apple.com/jp/artist/dj-ilham/1875511198 *（この仲間の中心）*
 - **DJ EXCUSE** https://music.apple.com/jp/artist/dj-excuse/6769915392
-- **Sound Bass** https://music.apple.com/jp/artist/sound-bass/1401532616
-- **RYU PROJECT** https://music.apple.com/jp/artist/ryu-project/1884186575
+- **DJ Miro** https://music.apple.com/jp/artist/dj-miro/124746276 *（Big Boom の共同名義。IDが古く同じ名前の別人の可能性あり）*
+- **Sound Bass** https://music.apple.com/jp/artist/sound-bass/1401532616 *（リミックサー）*
+
+### 関西「人生応援歌」— 大阪弁・男気・家族 *（新グループ、`local-dialect`）*
+関西弁の男性ボーカルで、誇り・仕事・夫婦・へこたれない人生を歌う。ジャケットは般若の面、漢字のタイトル、「大阪魂」レーベルなど。独立クラスタの候補。
+- **Shinzabu Wageton** — *Apple Music リンク未特定*（10曲: 大和魂、やったれ大阪魂、俺がお前を守ったるで、明日死んでも後悔せぇへん生き… ほか）
+- **gazeru358** https://music.apple.com/jp/artist/gazeru358/6773568257 *（嫁になれ、嫁へ、最後まで抱きしめる、俺の隣りで老けろ。アルバム「喜怒哀楽」）*
+- **導鎮** https://music.apple.com/jp/artist/%E5%B0%8E%E9%8E%AE/1870926124 *（労働讃歌〜名も無き誇り〜、人生最前線〜遅咲きの花〜、除夜のハネ feat. KAYA‐9。B にも掲載）*
+- **MARMIN** — *リンク未特定*（頂 feat. KING STRONG）
+
+### 男性ラブバラード *（A 寄り）*
+- **RYU PROJECT** https://music.apple.com/jp/artist/ryu-project/1884186575 *（幸。2バージョン）*
+- **よしき** https://music.apple.com/jp/artist/%E3%82%88%E3%81%97%E3%81%8D/1819640505 *（夫婦・家族の歌: 夫婦のルール、出会いに感謝、これからも。ID一致は推定）*
+
+### 他のクラスタに掲載済み
+- A. Soft Melodic: **REN'S factory**（最後のキス）、**LiSAsong**（愛してる君だけを）
+- A. 和ロック: **魅こと**（新時代）
+- B. Hard Edge: **Peromu**（So Sexy Winey）、**de〜ku**（TREASURES、心ほどける色、LIFE GOES ON）、**RAGGAREA**（GAME）、**MAMA**（Rise Again）
 
 ---
 
@@ -186,7 +197,7 @@ A/B/C に加えて、分かるときだけ付ける:
 - `AI-assist` — 制作補助としてAI（例: AI AINU）
 - `AI-unknown` — 不明（デフォルト）
 - `collab-unit` — 複数名義コラボ（例: STAR SEEED & HIBINO RIN）
-- `local-dialect` — 方言・ご当地ネタ
+- `local-dialect` — 方言・ご当地ネタ（例: Shinzabu Wageton、gazeru358 — 大阪弁）
 
 ### AIに関する明示メモ
 - **音奏羽アリナ** — プロフィールで「AIクリエイター」
@@ -223,7 +234,8 @@ A/B/C に加えて、分かるときだけ付ける:
 - **Rurqie** — 解決済み → Soft Melodic グラフ周辺
 - **shvyac.female.ai 67 → 89曲** — 解決済み → Soft Melodic＋和ロック群に振り分け（2026-09-26）
 - **リンク未特定** — HimaWari@yuno、REiNa、AVALI、RIMI、開幸涼音（同名多数／検索でアーティストページ未発見）
-- **shvyac.male.ai** — 公開ページでは上位11アーティストしか見えないため、38曲のうち残りはまだ振り分けていない
+- **shvyac.male.ai** — 解決済み → スクショから全38曲を振り分け（2026-09-27）
+- **男性側のリンク未特定** — Shinzabu Wageton、MARMIN
 - **「Bassquake – Ignition」** — shvyac.hard.ai の17曲目。アーティスト未特定
 
 ---
