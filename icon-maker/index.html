@@ -118,6 +118,8 @@ input[type="color"] { width: 44px; height: 34px; border: 1px solid var(--line); 
 .exp small { font-weight: 400; font-size: 11px; opacity: .8; }
 .check { display: flex; gap: 8px; align-items: center; font-size: 14px; }
 .check input { width: 20px; height: 20px; accent-color: var(--accent); }
+.h3 { font-size: 12px; font-weight: 700; color: var(--ink); margin: 4px 0 -4px; display: flex; gap: 8px; align-items: center; }
+.h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 ol.how { margin: 0; padding-left: 1.3em; color: var(--muted); font-size: 13px; display: grid; gap: 4px; max-width: 65ch; }
 ol.how b { color: var(--ink); font-weight: 600; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -199,6 +201,11 @@ ol.how b { color: var(--ink); font-weight: 600; }
       <div class="row"><label for="stroke">縁取り</label><input id="stroke" type="range" min="0" max="1" step="0.01">
         <input id="strokeColor" type="color" aria-label="縁取りの色"></div>
       <button class="btn small" type="button" id="center" style="justify-self:start">位置を中央に戻す</button>
+      <div class="h3">3D</div>
+      <div class="row"><label for="depth">厚み</label><input id="depth" type="range" min="0" max="1" step="0.01">
+        <input id="extColor" type="color" aria-label="側面の色"></div>
+      <div class="row"><label for="depthAngle">奥行き方向</label><input id="depthAngle" type="range" min="0" max="360" step="1"><span class="val" id="depthAngleV"></span></div>
+      <div class="row"><label for="shine">ツヤ</label><input id="shine" type="range" min="0" max="1" step="0.01"><span class="val" id="shineV"></span></div>
     </section>
 
     <section class="card">
@@ -222,6 +229,14 @@ ol.how b { color: var(--ink); font-weight: 600; }
         </div><span></span>
       </div>
       <label class="check"><input id="gloss" type="checkbox"> 上部に光沢をつける</label>
+      <div class="h3">3D</div>
+      <div class="seg" data-key="bg3d">
+        <button type="button" data-val="none">なし</button>
+        <button type="button" data-val="bevel">面取り</button>
+        <button type="button" data-val="floor">床グリッド</button>
+        <button type="button" data-val="orbs">球体</button>
+      </div>
+      <div class="row"><label for="bgDepth">強さ</label><input id="bgDepth" type="range" min="0" max="1" step="0.01"><span class="val" id="bgDepthV"></span></div>
     </section>
 
     <section class="card">
@@ -235,6 +250,18 @@ ol.how b { color: var(--ink); font-weight: 600; }
       <div class="row"><label for="imgScale">拡大</label><input id="imgScale" type="range" min="0.2" max="3" step="0.01"><span class="val" id="imgScaleV"></span></div>
       <div class="row"><label for="imgX">横位置</label><input id="imgX" type="range" min="-0.5" max="0.5" step="0.005"><span class="val" id="imgXV"></span></div>
       <div class="row"><label for="imgY">縦位置</label><input id="imgY" type="range" min="-0.5" max="0.5" step="0.005"><span class="val" id="imgYV"></span></div>
+      <div class="h3">3D</div>
+      <div class="row"><label for="imgDepth">厚み</label><input id="imgDepth" type="range" min="0" max="1" step="0.01"><span class="val" id="imgDepthV"></span></div>
+      <div class="row"><label for="imgFloat">浮き</label><input id="imgFloat" type="range" min="0" max="1" step="0.01"><span class="val" id="imgFloatV"></span></div>
+      <p class="sub">厚みの向きは「文字 → 奥行き方向」と共通です。</p>
+    </section>
+
+    <section class="card">
+      <h2>3D 傾き</h2>
+      <p class="sub">文字と画像を遠近感つきで傾けます。背景は傾きません。</p>
+      <div class="row"><label for="tiltX">上下</label><input id="tiltX" type="range" min="-60" max="60" step="1"><span class="val" id="tiltXV"></span></div>
+      <div class="row"><label for="tiltY">左右</label><input id="tiltY" type="range" min="-60" max="60" step="1"><span class="val" id="tiltYV"></span></div>
+      <button class="btn small" type="button" id="untilt" style="justify-self:start">傾きをリセット</button>
     </section>
 
     <section class="card">
@@ -288,7 +315,9 @@ ol.how b { color: var(--ink); font-weight: 600; }
     text: 'GA', font: 'Dela Gothic One', weight: '400', size: 0.5, color: '#F3E9D2',
     dx: 0, dy: 0, shadow: 0.35, stroke: 0, strokeColor: '#151B22',
     bg: 'linear', c1: '#10243E', c2: '#2E7D8C', angle: 135, pattern: 'none', gloss: false,
-    imgScale: 1, imgX: 0, imgY: 0, shape: 'squircle', label: 'Ghost Artists'
+    imgScale: 1, imgX: 0, imgY: 0, shape: 'squircle', label: 'Ghost Artists',
+    depth: 0, depthAngle: 45, extColor: '#0B1522', shine: 0,
+    imgDepth: 0, imgFloat: 0, tiltX: 0, tiltY: 0, bg3d: 'none', bgDepth: 0.5
   };
   const PRESETS = [
     { name: 'Midnight', s: {} },
@@ -298,7 +327,10 @@ ol.how b { color: var(--ink); font-weight: 600; }
     { name: 'Ghost', s: { text: '👻', size: 0.62, bg: 'radial', c1: '#C9D3FF', c2: '#4F5FD9', shadow: 0.4, label: 'Ghost' } },
     { name: 'Mono', s: { text: 'Aa', font: 'Playfair Display', weight: '900', color: '#FFFFFF', bg: 'solid', c1: '#111111', shadow: 0, size: 0.52, label: 'Type' } },
     { name: 'Pop', s: { text: 'ポップ', font: 'Rampart One', weight: '400', color: '#FFFFFF', c1: '#FF5D8F', c2: '#FFB86B', angle: 200, stroke: 0.35, strokeColor: '#7A1E48', shadow: 0.2, size: 0.34, label: 'Pop' } },
-    { name: 'Neon', s: { text: 'ON\nAIR', font: 'Bebas Neue', weight: '400', color: '#5CF2D6', bg: 'radial', c1: '#23304A', c2: '#0B0F18', shadow: 0.9, size: 0.4, label: 'On Air' } }
+    { name: 'Neon', s: { text: 'ON\nAIR', font: 'Bebas Neue', weight: '400', color: '#5CF2D6', bg: 'radial', c1: '#23304A', c2: '#0B0F18', shadow: 0.9, size: 0.4, label: 'On Air' } },
+    { name: 'Retro 3D', s: { text: 'GO', font: 'Dela Gothic One', weight: '400', color: '#FFD36E', depth: 0.5, extColor: '#B8336A', depthAngle: 90, bg: 'radial', c1: '#3B1C6E', c2: '#0B0620', bg3d: 'floor', bgDepth: 0.7, shadow: 0, tiltX: 20, size: 0.5, dy: -0.1, label: 'Retro' } },
+    { name: 'Bubble', s: { text: 'あ', font: 'M PLUS Rounded 1c', weight: '800', color: '#FFFFFF', shine: 0.8, depth: 0.22, extColor: '#1E5AA8', depthAngle: 90, bg: 'radial', c1: '#9FD3FF', c2: '#3A7BD5', bg3d: 'orbs', bgDepth: 0.5, shadow: 0.3, size: 0.6, label: 'Bubble' } },
+    { name: 'Block', s: { text: 'B', font: 'Noto Sans JP', weight: '900', color: '#F7F3EA', depth: 0.7, extColor: '#9A3A0E', depthAngle: 45, bg: 'solid', c1: '#F4A259', bg3d: 'bevel', bgDepth: 0.7, shadow: 0.2, tiltY: -22, size: 0.62, dx: -0.04, dy: -0.04, label: 'Block' } }
   ];
   const KEY = 'iconforge.v1';
   const $ = (id) => document.getElementById(id);
@@ -309,8 +341,9 @@ ol.how b { color: var(--ink); font-weight: 600; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
 
   // ---------- drawing ----------
-  function shapePath(ctx, S, shape) {
-    ctx.beginPath();
+  function shapePath(ctx, S, shape, append) {
+    if (!append) ctx.beginPath();
+    else ctx.moveTo(S, S / 2);
     if (shape === 'circle') { ctx.arc(S / 2, S / 2, S / 2, 0, Math.PI * 2); return; }
     if (shape === 'square') { ctx.rect(0, 0, S, S); return; }
     if (shape === 'rounded') {
@@ -356,8 +389,109 @@ ol.how b { color: var(--ink); font-weight: 600; }
 
   const fontStr = (px) => `${st.weight} ${px}px "${st.font}", "Hiragino Sans", sans-serif`;
 
-  function drawText(ctx, S) {
-    if (!st.text.trim()) return;
+  // 再利用するオフスクリーンキャンバス
+  const pool = {};
+  function layer(name, S) {
+    const k = name + S;
+    let c = pool[k];
+    if (!c) { c = pool[k] = document.createElement('canvas'); c.width = c.height = S; }
+    const x = c.getContext('2d');
+    x.setTransform(1, 0, 0, 1, 0, 0); x.globalAlpha = 1; x.globalCompositeOperation = 'source-over';
+    x.clearRect(0, 0, S, S);
+    return c;
+  }
+
+  function shade(hex, f) {
+    const n = parseInt(hex.replace('#', ''), 16);
+    const m = (v) => Math.round(v * (1 - f)).toString(16).padStart(2, '0');
+    return '#' + m(n >> 16 & 255) + m(n >> 8 & 255) + m(n & 255);
+  }
+
+  // 立体押し出し：シルエットを奥行き方向に積み重ねてから正面を描く
+  function extrude(dst, src, S, depthPx, angleDeg, tint, alpha) {
+    if (depthPx >= 1) {
+      const sil = layer('sil', S), sc = sil.getContext('2d');
+      sc.drawImage(src, 0, 0);
+      sc.globalCompositeOperation = 'source-atop'; sc.globalAlpha = alpha; sc.fillStyle = tint;
+      sc.fillRect(0, 0, S, S);
+      const a = angleDeg * Math.PI / 180, ux = Math.cos(a), uy = Math.sin(a);
+      const steps = Math.min(Math.ceil(depthPx / 1.5), 90);
+      for (let i = steps; i >= 1; i--) { const d = depthPx * i / steps; dst.drawImage(sil, ux * d, uy * d); }
+    }
+    dst.drawImage(src, 0, 0);
+  }
+
+  // 遠近法つきの傾き：細い帯に分けて、奥ほど縮めて描き直す
+  function tiltLayer(src, S, tx, ty) {
+    const P = 2.2, step = 2;
+    let cur = src;
+    const pass = (deg, vertical, name) => {
+      const out = layer(name, S), o = out.getContext('2d');
+      const t = deg * Math.PI / 180, sn = Math.sin(t), cs = Math.cos(t);
+      const map = (v) => { const k = P / (P + v * sn); return [v * cs * k, k]; };
+      for (let p = 0; p < S; p += step) {
+        const [a0, k0] = map(p / S * 2 - 1), [a1, k1] = map((p + step) / S * 2 - 1);
+        const w = S * (k0 + k1) / 2;
+        const d0 = (a0 + 1) / 2 * S, d1 = (a1 + 1) / 2 * S;
+        const len = Math.abs(d1 - d0) + 0.6, at = Math.min(d0, d1);
+        if (vertical) o.drawImage(cur, p, 0, step, S, at, (S - w) / 2, len, w);
+        else o.drawImage(cur, 0, p, S, step, (S - w) / 2, at, w, len);
+      }
+      cur = out;
+    };
+    if (tx) pass(tx, false, 'tx');
+    if (ty) pass(ty, true, 'ty');
+    return cur;
+  }
+
+  function drawBg3d(ctx, S, mask) {
+    const k = st.bgDepth;
+    if (st.bg3d === 'bevel') {
+      // 形の外側に置いた輪の影だけを内側に落として、面取りの光と影を作る
+      const b = S * (0.012 + 0.05 * k);
+      ctx.save();
+      ctx.beginPath(); ctx.rect(-S, -S, S * 3, S * 3); shapePath(ctx, S, mask || 'square', true);
+      ctx.fillStyle = '#000'; ctx.shadowBlur = b * 1.3;
+      ctx.shadowColor = `rgba(255,255,255,${0.35 + 0.35 * k})`; ctx.shadowOffsetX = b; ctx.shadowOffsetY = b; ctx.fill('evenodd');
+      ctx.shadowColor = `rgba(0,0,0,${0.3 + 0.35 * k})`; ctx.shadowOffsetX = -b; ctx.shadowOffsetY = -b; ctx.fill('evenodd');
+      ctx.restore();
+      const g = ctx.createRadialGradient(S * 0.3, S * 0.22, 0, S * 0.3, S * 0.22, S * 0.8);
+      g.addColorStop(0, `rgba(255,255,255,${0.22 * k})`); g.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, S, S);
+    } else if (st.bg3d === 'floor') {
+      const h = S * 0.56, vx = S / 2;
+      ctx.save();
+      ctx.beginPath(); ctx.rect(0, h, S, S - h); ctx.clip();
+      ctx.fillStyle = `rgba(0,0,0,${0.12 + 0.18 * k})`; ctx.fillRect(0, h, S, S - h);
+      const g = ctx.createLinearGradient(0, h, 0, S);
+      g.addColorStop(0, hexA(st.color, 0)); g.addColorStop(1, hexA(st.color, 0.3 + 0.55 * k));
+      ctx.strokeStyle = g; ctx.lineWidth = Math.max(1, S / 200);
+      for (let i = -14; i <= 14; i++) { ctx.beginPath(); ctx.moveTo(vx, h); ctx.lineTo(vx + i * S * 0.2, S * 1.5); ctx.stroke(); }
+      for (let i = 1; i <= 9; i++) {
+        const y = h + (S - h) * Math.pow(i / 9, 2.2);
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(S, y); ctx.stroke();
+      }
+      ctx.restore();
+      const glow = ctx.createLinearGradient(0, h - S * 0.08, 0, h + S * 0.02);
+      glow.addColorStop(0, hexA(st.color, 0)); glow.addColorStop(1, hexA(st.color, 0.25 * k + 0.1));
+      ctx.fillStyle = glow; ctx.fillRect(0, h - S * 0.08, S, S * 0.1);
+    } else if (st.bg3d === 'orbs') {
+      const base = st.bg === 'solid' ? st.c1 : st.c2;
+      const O = [[0.16, 0.2, 0.13], [0.86, 0.16, 0.09], [0.82, 0.8, 0.16], [0.14, 0.86, 0.1], [0.52, 0.07, 0.05], [0.6, 0.95, 0.06]];
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,0.3)'; ctx.shadowBlur = S * 0.03; ctx.shadowOffsetY = S * 0.015;
+      O.forEach(([x, y, r]) => {
+        const R = S * r * (0.5 + k), cx = x * S, cy = y * S;
+        const g = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.05, cx, cy, R);
+        g.addColorStop(0, 'rgba(255,255,255,0.95)'); g.addColorStop(0.35, base); g.addColorStop(1, shade(base, 0.55));
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.fill();
+      });
+      ctx.restore();
+    }
+  }
+
+
+  function drawTextFace(ctx, S) {
     const lines = st.text.split('\n');
     let fs = st.size * S;
     ctx.font = fontStr(fs);
@@ -369,28 +503,39 @@ ol.how b { color: var(--ink); font-weight: 600; }
     ctx.textBaseline = 'alphabetic';
     ctx.lineJoin = 'round';
     const cx = S / 2 + st.dx * S;
-    const withShadow = () => {
-      ctx.shadowColor = `rgba(0,0,0,${0.15 + st.shadow * 0.35})`;
-      ctx.shadowBlur = S * 0.05 * st.shadow;
-      ctx.shadowOffsetY = S * 0.025 * st.shadow;
-    };
-    const noShadow = () => { ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0; };
+    let top = S, bottom = 0;
     lines.forEach((line, i) => {
       const m = ctx.measureText(line || ' ');
       const asc = m.actualBoundingBoxAscent || fs * 0.7, desc = m.actualBoundingBoxDescent || 0;
       const cy = S / 2 + st.dy * S + (i - (lines.length - 1) / 2) * lh;
       const y = cy + (asc - desc) / 2;
+      top = Math.min(top, y - asc); bottom = Math.max(bottom, y + desc);
       if (st.stroke > 0) {
-        if (st.shadow > 0) withShadow();
         ctx.lineWidth = st.stroke * fs * 0.14;
         ctx.strokeStyle = st.strokeColor;
         ctx.strokeText(line, cx, y);
-        noShadow();
-      } else if (st.shadow > 0) withShadow();
+      }
       ctx.fillStyle = st.color;
       ctx.fillText(line, cx, y);
-      noShadow();
     });
+    if (st.shine > 0) {
+      // 正面にだけ光のグラデーションを重ねて、膨らんだツヤを出す
+      const g = ctx.createLinearGradient(0, top, 0, bottom);
+      g.addColorStop(0, `rgba(255,255,255,${0.75 * st.shine})`);
+      g.addColorStop(0.48, 'rgba(255,255,255,0)');
+      g.addColorStop(0.52, 'rgba(0,0,0,0)');
+      g.addColorStop(1, `rgba(0,0,0,${0.35 * st.shine})`);
+      ctx.globalCompositeOperation = 'source-atop';
+      ctx.fillStyle = g; ctx.fillRect(0, 0, S, S);
+      ctx.globalCompositeOperation = 'source-over';
+    }
+  }
+
+  function placeLayer(ctx, src, S, shadowA, blur, offY) {
+    const T = tiltLayer(src, S, st.tiltX, st.tiltY);
+    if (blur > 0) { ctx.shadowColor = `rgba(0,0,0,${shadowA})`; ctx.shadowBlur = blur; ctx.shadowOffsetY = offY; }
+    ctx.drawImage(T, 0, 0);
+    ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0;
   }
 
   function render(ctx, S, mask) {
@@ -409,12 +554,24 @@ ol.how b { color: var(--ink); font-weight: 600; }
     ctx.fillStyle = fill;
     ctx.fillRect(0, 0, S, S);
     drawPattern(ctx, S);
+    drawBg3d(ctx, S, mask);
+    const px = (d) => d * S * 0.12;
     if (img) {
+      const L = layer('imgL', S), lc = L.getContext('2d');
       const k = Math.max(S / img.naturalWidth, S / img.naturalHeight) * st.imgScale;
       const w = img.naturalWidth * k, h = img.naturalHeight * k;
-      ctx.drawImage(img, (S - w) / 2 + st.imgX * S, (S - h) / 2 + st.imgY * S, w, h);
+      lc.drawImage(img, (S - w) / 2 + st.imgX * S, (S - h) / 2 + st.imgY * S, w, h);
+      const E = layer('imgE', S);
+      extrude(E.getContext('2d'), L, S, px(st.imgDepth), st.depthAngle, '#000', 0.55);
+      placeLayer(ctx, E, S, 0.2 + 0.35 * st.imgFloat, S * 0.06 * st.imgFloat, S * 0.05 * st.imgFloat);
     }
-    drawText(ctx, S);
+    if (st.text.trim()) {
+      const L = layer('txtL', S);
+      drawTextFace(L.getContext('2d'), S);
+      const E = layer('txtE', S);
+      extrude(E.getContext('2d'), L, S, px(st.depth), st.depthAngle, st.extColor, 1);
+      placeLayer(ctx, E, S, 0.15 + st.shadow * 0.35, S * 0.05 * st.shadow, S * 0.025 * st.shadow);
+    }
     if (st.gloss) {
       const g = ctx.createLinearGradient(0, 0, 0, S * 0.6);
       g.addColorStop(0, 'rgba(255,255,255,0.32)'); g.addColorStop(1, 'rgba(255,255,255,0)');
@@ -445,11 +602,14 @@ ol.how b { color: var(--ink); font-weight: 600; }
   const fmt = {
     size: (v) => Math.round(v * 100) + '%', dx: (v) => Math.round(v * 100), dy: (v) => Math.round(v * 100),
     shadow: (v) => Math.round(v * 100), angle: (v) => v + '°', imgScale: (v) => v.toFixed(2) + '×',
-    imgX: (v) => Math.round(v * 100), imgY: (v) => Math.round(v * 100)
+    imgX: (v) => Math.round(v * 100), imgY: (v) => Math.round(v * 100),
+    depthAngle: (v) => v + '°', shine: (v) => Math.round(v * 100), imgDepth: (v) => Math.round(v * 100),
+    imgFloat: (v) => Math.round(v * 100), bgDepth: (v) => Math.round(v * 100), tiltX: (v) => v + '°', tiltY: (v) => v + '°'
   };
-  const ranges = ['size', 'dx', 'dy', 'shadow', 'stroke', 'angle', 'imgScale', 'imgX', 'imgY'];
-  const colors = ['color', 'strokeColor', 'c1', 'c2'];
-  const colorId = { color: 'textColor', strokeColor: 'strokeColor', c1: 'c1', c2: 'c2' };
+  const ranges = ['size', 'dx', 'dy', 'shadow', 'stroke', 'angle', 'imgScale', 'imgX', 'imgY',
+    'depth', 'depthAngle', 'shine', 'imgDepth', 'imgFloat', 'bgDepth', 'tiltX', 'tiltY'];
+  const colors = ['color', 'strokeColor', 'c1', 'c2', 'extColor'];
+  const colorId = { color: 'textColor', strokeColor: 'strokeColor', c1: 'c1', c2: 'c2', extColor: 'extColor' };
 
   function syncUI() {
     $('text').value = st.text;
@@ -457,7 +617,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
     $('gloss').checked = st.gloss;
     ranges.forEach((k) => {
       $(k).value = st[k];
-      const v = $(k + 'V'); if (v) v.textContent = fmt[k](+st[k]);
+      const v = $(k + 'V'); if (v && fmt[k]) v.textContent = fmt[k](+st[k]);
     });
     colors.forEach((k) => { $(colorId[k]).value = st[k]; });
     document.querySelectorAll('.seg[data-key]').forEach((seg) => {
@@ -467,7 +627,8 @@ ol.how b { color: var(--ink); font-weight: 600; }
     $('angle').disabled = st.bg !== 'linear';
     $('c2').disabled = st.bg === 'solid';
     const hasImg = !!img;
-    ['imgScale', 'imgX', 'imgY', 'clearImg'].forEach((k) => { $(k).disabled = !hasImg; });
+    $('bgDepth').disabled = st.bg3d === 'none';
+    ['imgScale', 'imgX', 'imgY', 'imgDepth', 'imgFloat', 'clearImg'].forEach((k) => { $(k).disabled = !hasImg; });
   }
 
   function set(patch) { Object.assign(st, patch); syncUI(); update(); if ('font' in patch || 'text' in patch || 'weight' in patch) loadFont(); }
@@ -478,6 +639,7 @@ ol.how b { color: var(--ink); font-weight: 600; }
   $('label').addEventListener('input', (e) => set({ label: e.target.value }));
   $('gloss').addEventListener('change', (e) => set({ gloss: e.target.checked }));
   $('center').addEventListener('click', () => set({ dx: 0, dy: 0 }));
+  $('untilt').addEventListener('click', () => set({ tiltX: 0, tiltY: 0 }));
   $('swap').addEventListener('click', () => set({ c1: st.c2, c2: st.c1 }));
   document.querySelectorAll('.seg[data-key]').forEach((seg) => {
     seg.addEventListener('click', (e) => {
