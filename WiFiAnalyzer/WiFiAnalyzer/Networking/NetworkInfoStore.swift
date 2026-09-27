@@ -74,7 +74,7 @@ final class NetworkInfoStore: NSObject, ObservableObject {
         lastUpdated = Date()
     }
 
-    private func apply(_ path: NWPath) {
+    private func apply(_ path: Network.NWPath) {
         isSatisfied = path.status == .satisfied
         isOnWiFi = path.usesInterfaceType(.wifi)
         isExpensive = path.isExpensive
@@ -89,7 +89,7 @@ final class NetworkInfoStore: NSObject, ObservableObject {
         Task { await refresh() }
     }
 
-    private static func hostString(_ endpoint: NWEndpoint) -> String? {
+    private static func hostString(_ endpoint: Network.NWEndpoint) -> String? {
         guard case .hostPort(let host, _) = endpoint else { return nil }
         switch host {
         case .ipv4(let address): return "\(address)"
