@@ -27,6 +27,7 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 
 ### Entry
 - **Piyoking** https://music.apple.com/us/artist/piyoking/1850436700
+  Spotify: https://open.spotify.com/artist/5oc3yeylvRHS25DkkHMJQr
 - **4Rabbit** https://music.apple.com/us/artist/4rabbit/1830244334
 
 ### Center
@@ -237,6 +238,7 @@ Apply alongside A/B/C when known:
 - **shvyac.male.ai** — resolved → all 38 tracks triaged from screenshots (2026-09-27)
 - **Male-side links unresolved** — Shinzabu Wageton, MARMIN
 - **“Bassquake – Ignition”** — track 17 on shvyac.hard.ai; artist not yet identified
+- **Spotify artist URLs** — being added under each Apple Music URL as they are verified (Piyoking done; the rest pending)
 
 ---
 
@@ -246,4 +248,4 @@ Community-maintained discovery list of Apple Music and Spotify links. Scenes mov
 
 ---
 
-*Last updated: 2026-09-27*
+*Last updated: 2026-09-30*
