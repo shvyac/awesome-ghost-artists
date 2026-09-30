@@ -29,13 +29,17 @@
 - **Piyoking** https://music.apple.com/us/artist/piyoking/1850436700
   Spotify: https://open.spotify.com/artist/5oc3yeylvRHS25DkkHMJQr
 - **4Rabbit** https://music.apple.com/us/artist/4rabbit/1830244334
+  Spotify: https://open.spotify.com/artist/5MRPFQz4eMq6HZI0qRzfvS
 
 ### 中心
 - **NOVELLE.** https://music.apple.com/jp/artist/novelle/1829748469
+  Spotify: https://open.spotify.com/artist/1xVwLy45ibyLq6kpfS9Jkv
 - **Hyen** https://music.apple.com/us/artist/hyen/1816798687
 - **FiGG** https://music.apple.com/us/artist/figg/1830367076
 - **音奏羽アリナ** https://music.apple.com/jp/artist/音奏羽アリナ/1827271929 *（ハード寄り曲は hard プレイリストにも登場）*
+  Spotify: https://open.spotify.com/artist/5uUCYmxuoJ3J9VNk2XnAH4
 - **Otto** https://music.apple.com/us/artist/otto/1420058461
+  Spotify: https://open.spotify.com/artist/6k2h7cAuvLNIIERuHfJTdB
 - **3Dミュージック** https://music.apple.com/jp/artist/3dミュージック/1788574308
 - **kami xxvoice** https://music.apple.com/us/artist/kami-xxvoice/1834610583
 - **Lunova** https://music.apple.com/us/artist/lunova/1809312080
@@ -47,8 +51,11 @@
 - **&N** https://music.apple.com/us/artist/n/1819398764
 - **EmuW** https://music.apple.com/jp/artist/emuw/1804409891
 - **Djbouya** https://music.apple.com/tz/artist/djbouya/1816051602
+  Spotify: https://open.spotify.com/artist/2VzUFC77AyrD194qS2GtTB
 - **NN Music Works** https://music.apple.com/us/artist/nn-music-works/1855418612
+  Spotify: https://open.spotify.com/artist/6Nj3JTFiKWVcbAMsPAmA46
 - **MsReon** https://music.apple.com/us/artist/msreon/1834776078
+  Spotify: https://open.spotify.com/artist/6kcm2224QA0oUiDFYqILEo
 - **Cyana / シアナ** https://music.apple.com/jp/artist/%E3%82%B7%E3%82%A2%E3%83%8A/1887032103 *（AIシンガー×プロデューサー RoUGe。Suno / Gemini）*
 - **MINORI** https://music.apple.com/jp/artist/minori/1136952961 *（Project Minori / JLINE — AIシンガー、淡い J-Pop / エレクトロ）*
 
@@ -66,17 +73,20 @@
 ### グラフ周辺
 *（入口ペアから似ているアーティストを約2ホップ辿った結果）*
 - **CONASUKE** https://music.apple.com/us/artist/conasuke/1843130680
+  Spotify: https://open.spotify.com/artist/7t1Aqh707QUzv43H4G0EsV
 - **HEARTCRASH** https://music.apple.com/us/artist/heartcrash/1830214959
 - **Bluebird Queen** https://music.apple.com/us/artist/bluebird-queen/1833066915
   Spotify: https://open.spotify.com/artist/5FZCfDeqm0jvK2B5y5GprA
 - **Super Sloth Man** https://music.apple.com/us/artist/super-sloth-man/1829707369
 - **kurome** https://music.apple.com/us/artist/kurome/1855762126
+  Spotify: https://open.spotify.com/artist/3qiCF7xYEQwlwgPpsntJsH
 - **Arise** https://music.apple.com/us/artist/arise/1832642948
 - **NOVA** https://music.apple.com/us/artist/nova/1561102833
 - **NicoReo** https://music.apple.com/jp/artist/nicoreo/1841303455
 - **Elonaire** https://music.apple.com/us/artist/elonaire/1843447573
 - **Rurqie** https://music.apple.com/jp/artist/rurqie/1884873746 *（Elonaire近傍。淡い日本語の恋愛曲タイトル）*
 - **ZEROKO** https://music.apple.com/us/artist/zeroko/1888689066
+  Spotify: https://open.spotify.com/artist/0j41paN3G1Yjcri4xQRDrv
 - **Nowa** https://music.apple.com/jp/artist/nowa/1878928538
 - **REEMARI** https://music.apple.com/us/artist/reemari/1892768745
 - **青羽-Aoha** https://music.apple.com/us/artist/青羽-aoha/1896345265
@@ -109,6 +119,7 @@
 
 ### 近い
 - **Peromu** https://music.apple.com/jp/artist/peromu/1761492628
+  Spotify: https://open.spotify.com/artist/0GegwXDzBEM9m4hLDk1Coe
 - **de〜ku** https://music.apple.com/jp/artist/de-ku/1796545624
 - **WACCO** https://music.apple.com/jp/artist/wacco/1827185444 *（RAGGAREA類似。レゲエ）*
 - **Susano Style** https://music.apple.com/jp/artist/susano-style/1815243838 *（RAGGAREA類似。レゲエ／ストリート）*
@@ -239,7 +250,7 @@ A/B/C に加えて、分かるときだけ付ける:
 - **shvyac.male.ai** — 解決済み → スクショから全38曲を振り分け（2026-09-27）
 - **男性側のリンク未特定** — Shinzabu Wageton、MARMIN
 - **「Bassquake – Ignition」** — shvyac.hard.ai の17曲目。アーティスト未特定
-- **Spotify アーティストURL** — 確認できたものから順に Apple Music URL の下へ追記中（済み: Piyoking、Bluebird Queen。残りは未対応）
+- **Spotify アーティストURL** — 確認できたものから順に Apple Music URL の下へ追記中（2026-09-30 時点で13件済み。残りは未対応）
 
 ---
 
