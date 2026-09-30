@@ -29,13 +29,17 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 - **Piyoking** https://music.apple.com/us/artist/piyoking/1850436700
   Spotify: https://open.spotify.com/artist/5oc3yeylvRHS25DkkHMJQr
 - **4Rabbit** https://music.apple.com/us/artist/4rabbit/1830244334
+  Spotify: https://open.spotify.com/artist/5MRPFQz4eMq6HZI0qRzfvS
 
 ### Center
 - **NOVELLE.** https://music.apple.com/jp/artist/novelle/1829748469
+  Spotify: https://open.spotify.com/artist/1xVwLy45ibyLq6kpfS9Jkv
 - **Hyen** https://music.apple.com/us/artist/hyen/1816798687
 - **FiGG** https://music.apple.com/us/artist/figg/1830367076
 - **音奏羽アリナ** https://music.apple.com/jp/artist/音奏羽アリナ/1827271929 *(also appears on hard playlist for some tracks)*
+  Spotify: https://open.spotify.com/artist/5uUCYmxuoJ3J9VNk2XnAH4
 - **Otto** https://music.apple.com/us/artist/otto/1420058461
+  Spotify: https://open.spotify.com/artist/6k2h7cAuvLNIIERuHfJTdB
 - **3Dミュージック** https://music.apple.com/jp/artist/3dミュージック/1788574308
 - **kami xxvoice** https://music.apple.com/us/artist/kami-xxvoice/1834610583
 - **Lunova** https://music.apple.com/us/artist/lunova/1809312080
@@ -47,8 +51,11 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 - **&N** https://music.apple.com/us/artist/n/1819398764
 - **EmuW** https://music.apple.com/jp/artist/emuw/1804409891
 - **Djbouya** https://music.apple.com/tz/artist/djbouya/1816051602
+  Spotify: https://open.spotify.com/artist/2VzUFC77AyrD194qS2GtTB
 - **NN Music Works** https://music.apple.com/us/artist/nn-music-works/1855418612
+  Spotify: https://open.spotify.com/artist/6Nj3JTFiKWVcbAMsPAmA46
 - **MsReon** https://music.apple.com/us/artist/msreon/1834776078
+  Spotify: https://open.spotify.com/artist/6kcm2224QA0oUiDFYqILEo
 - **Cyana / シアナ** https://music.apple.com/jp/artist/%E3%82%B7%E3%82%A2%E3%83%8A/1887032103 *(AI singer × producer RoUGe; Suno / Gemini)*
 - **MINORI** https://music.apple.com/jp/artist/minori/1136952961 *(Project Minori / JLINE — AI singer, gentle J-Pop / electronic)*
 
@@ -66,17 +73,20 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 ### Graph periphery
 *(Apple Music similar-artists crawl, ~2 hops from the entry pair)*
 - **CONASUKE** https://music.apple.com/us/artist/conasuke/1843130680
+  Spotify: https://open.spotify.com/artist/7t1Aqh707QUzv43H4G0EsV
 - **HEARTCRASH** https://music.apple.com/us/artist/heartcrash/1830214959
 - **Bluebird Queen** https://music.apple.com/us/artist/bluebird-queen/1833066915
   Spotify: https://open.spotify.com/artist/5FZCfDeqm0jvK2B5y5GprA
 - **Super Sloth Man** https://music.apple.com/us/artist/super-sloth-man/1829707369
 - **kurome** https://music.apple.com/us/artist/kurome/1855762126
+  Spotify: https://open.spotify.com/artist/3qiCF7xYEQwlwgPpsntJsH
 - **Arise** https://music.apple.com/us/artist/arise/1832642948
 - **NOVA** https://music.apple.com/us/artist/nova/1561102833
 - **NicoReo** https://music.apple.com/jp/artist/nicoreo/1841303455
 - **Elonaire** https://music.apple.com/us/artist/elonaire/1843447573
 - **Rurqie** https://music.apple.com/jp/artist/rurqie/1884873746 *(near Elonaire; soft JP love-song titles)*
 - **ZEROKO** https://music.apple.com/us/artist/zeroko/1888689066
+  Spotify: https://open.spotify.com/artist/0j41paN3G1Yjcri4xQRDrv
 - **Nowa** https://music.apple.com/jp/artist/nowa/1878928538
 - **REEMARI** https://music.apple.com/us/artist/reemari/1892768745
 - **青羽-Aoha** https://music.apple.com/us/artist/青羽-aoha/1896345265
@@ -109,6 +119,7 @@ Ragga / street / high-energy. Primary home of `shvyac.hard.ai` (growing — 17 t
 
 ### Nearby
 - **Peromu** https://music.apple.com/jp/artist/peromu/1761492628
+  Spotify: https://open.spotify.com/artist/0GegwXDzBEM9m4hLDk1Coe
 - **de〜ku** https://music.apple.com/jp/artist/de-ku/1796545624
 - **WACCO** https://music.apple.com/jp/artist/wacco/1827185444 *(RAGGAREA similar; reggae)*
 - **Susano Style** https://music.apple.com/jp/artist/susano-style/1815243838 *(RAGGAREA similar; reggae / street)*
@@ -239,7 +250,7 @@ Apply alongside A/B/C when known:
 - **shvyac.male.ai** — resolved → all 38 tracks triaged from screenshots (2026-09-27)
 - **Male-side links unresolved** — Shinzabu Wageton, MARMIN
 - **“Bassquake – Ignition”** — track 17 on shvyac.hard.ai; artist not yet identified
-- **Spotify artist URLs** — being added under each Apple Music URL as they are verified (done: Piyoking, Bluebird Queen; the rest pending)
+- **Spotify artist URLs** — being added under each Apple Music URL as they are verified (13 done as of 2026-09-30; the rest pending)
 
 ---
 
