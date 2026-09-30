@@ -68,6 +68,7 @@ Love / bittersweet melodic pop. Primary home of `shvyac.female.ai`.
 - **CONASUKE** https://music.apple.com/us/artist/conasuke/1843130680
 - **HEARTCRASH** https://music.apple.com/us/artist/heartcrash/1830214959
 - **Bluebird Queen** https://music.apple.com/us/artist/bluebird-queen/1833066915
+  Spotify: https://open.spotify.com/artist/5FZCfDeqm0jvK2B5y5GprA
 - **Super Sloth Man** https://music.apple.com/us/artist/super-sloth-man/1829707369
 - **kurome** https://music.apple.com/us/artist/kurome/1855762126
 - **Arise** https://music.apple.com/us/artist/arise/1832642948
@@ -238,7 +239,7 @@ Apply alongside A/B/C when known:
 - **shvyac.male.ai** — resolved → all 38 tracks triaged from screenshots (2026-09-27)
 - **Male-side links unresolved** — Shinzabu Wageton, MARMIN
 - **“Bassquake – Ignition”** — track 17 on shvyac.hard.ai; artist not yet identified
-- **Spotify artist URLs** — being added under each Apple Music URL as they are verified (Piyoking done; the rest pending)
+- **Spotify artist URLs** — being added under each Apple Music URL as they are verified (done: Piyoking, Bluebird Queen; the rest pending)
 
 ---
 
