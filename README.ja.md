@@ -68,6 +68,7 @@
 - **CONASUKE** https://music.apple.com/us/artist/conasuke/1843130680
 - **HEARTCRASH** https://music.apple.com/us/artist/heartcrash/1830214959
 - **Bluebird Queen** https://music.apple.com/us/artist/bluebird-queen/1833066915
+  Spotify: https://open.spotify.com/artist/5FZCfDeqm0jvK2B5y5GprA
 - **Super Sloth Man** https://music.apple.com/us/artist/super-sloth-man/1829707369
 - **kurome** https://music.apple.com/us/artist/kurome/1855762126
 - **Arise** https://music.apple.com/us/artist/arise/1832642948
@@ -238,7 +239,7 @@ A/B/C に加えて、分かるときだけ付ける:
 - **shvyac.male.ai** — 解決済み → スクショから全38曲を振り分け（2026-09-27）
 - **男性側のリンク未特定** — Shinzabu Wageton、MARMIN
 - **「Bassquake – Ignition」** — shvyac.hard.ai の17曲目。アーティスト未特定
-- **Spotify アーティストURL** — 確認できたものから順に Apple Music URL の下へ追記中（Piyoking 済み、残りは未対応）
+- **Spotify アーティストURL** — 確認できたものから順に Apple Music URL の下へ追記中（済み: Piyoking、Bluebird Queen。残りは未対応）
 
 ---
 
