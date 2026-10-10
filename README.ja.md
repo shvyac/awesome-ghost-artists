@@ -9,7 +9,9 @@
 ここでの分類は**厳密なジャンル名ではありません**。次の2つを根拠にしています。
 
 1. Apple Music「似ているアーティスト」グラフの孤立（Soft Melodic と Wa Spiritual はおおよそ2ホップ以内でほぼ交差しない）
-2. 聴き分けプレイリスト — 先に Apple Music、あれば Spotify（[shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → [Spotify](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)、[shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)、[shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv)）
+2. 聴き分けプレイリスト — 先に Apple Music、あれば Spotify（[shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → Spotify [shv.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)、[shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)、[shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv)）
+
+プレイリスト名の接頭辞: `shvyac.` は Apple Music、`shv.` は Spotify(例: `shvyac.female.ai` ↔ `shv.female.ai`)。
 
 | クラスタ | 入口 | 聴感 |
 | --- | --- | --- |
@@ -198,7 +200,7 @@
 
 ## 生成ツール
 
-こうした曲を作れる AI ツールをまとめています。商用のテキスト→楽曲生成(Suno v6、Lyria 3.5、ElevenLabs Music、Mureka など)、GitHub のオープンソースモデル(ACE-Step 1.5、YuE、SongGeneration など)、AI 歌声合成(Synthesizer V、VOCALOID6、NEUTRINO など)、仕上げ用のツール。→ **[TOOLS.ja.md](TOOLS.ja.md)**
+こうした曲を作れる AI ツールをまとめています。商用のテキスト→楽曲生成(Suno v6、Lyria 3.5、ElevenLabs Music、Mureka など)、GitHub のオープンソースモデル(ACE-Step 1.5、YuE2、MiniMax Music 3 など)、AI 歌声合成(Synthesizer V、VOCALOID7、NEUTRINO、VoiSona など)、仕上げ用のツール。⭐ バッジは GitHub のスター数をリアルタイム表示します(shields.io)。→ **[TOOLS.ja.md](TOOLS.ja.md)**
 
 ---
 
@@ -226,9 +228,9 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ## 参考プレイリスト
 
-### Soft寄り（`shvyac.female.ai`）
+### Soft寄り（`shvyac.female.ai` / `shv.female.ai`）
 1. Apple Music: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB)（89曲）
-2. Spotify: [shvyac.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)（66曲）
+2. Spotify: [shv.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)（66曲）
 
 ### Hard寄り（`shvyac.hard.ai`）
 1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)（17曲）
@@ -260,4 +262,4 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ---
 
-*最終更新: 2026-09-30*
+*最終更新: 2026-10-10*

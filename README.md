@@ -9,7 +9,9 @@ Apple Music and Spotify links for emerging “ghost artist” / delivery-native 
 Clusters are **not** strict genre labels. They come from:
 
 1. Apple Music “similar artists” graph isolation (Soft Melodic ↔ Wa Spiritual barely cross within ~2 hops)
-2. Curator listening splits in playlists — Apple Music first, then Spotify where available ([shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → [Spotify](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW), [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq), [shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv))
+2. Curator listening splits in playlists — Apple Music first, then Spotify where available ([shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → Spotify [shv.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW), [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq), [shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv))
+
+Playlist prefixes: `shvyac.` = Apple Music, `shv.` = Spotify (e.g. `shvyac.female.ai` ↔ `shv.female.ai`).
 
 | Cluster | Entry artists | Feel |
 | --- | --- | --- |
@@ -198,7 +200,7 @@ Male vocals in Kansai-ben about pride, work, marriage and not giving up. Covers 
 
 ## Generation tools
 
-Which AI tools can make songs like these: commercial text-to-song (Suno v6, Lyria 3.5, ElevenLabs Music, Mureka…), open-source models on GitHub (ACE-Step 1.5, YuE, SongGeneration…), AI singing synths (Synthesizer V, VOCALOID6, NEUTRINO…), and post-production. → **[TOOLS.md](TOOLS.md)**
+Which AI tools can make songs like these: commercial text-to-song (Suno v6, Lyria 3.5, ElevenLabs Music, Mureka…), open-source models on GitHub (ACE-Step 1.5, YuE2, MiniMax Music 3…), AI singing synths (Synthesizer V, VOCALOID7, NEUTRINO, VoiSona…), and post-production. ⭐ badges there show live GitHub star counts (via shields.io). → **[TOOLS.md](TOOLS.md)**
 
 ---
 
@@ -226,9 +228,9 @@ Apply alongside A/B/C when known:
 
 ## Reference playlists
 
-### Soft-leaning (`shvyac.female.ai`)
+### Soft-leaning (`shvyac.female.ai` / `shv.female.ai`)
 1. Apple Music: [shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) (89 tracks)
-2. Spotify: [shvyac.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW) (66 tracks)
+2. Spotify: [shv.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW) (66 tracks)
 
 ### Hard-leaning (`shvyac.hard.ai`)
 1. Apple Music: [shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq) (17 tracks)
@@ -260,4 +262,4 @@ Community-maintained discovery list of Apple Music and Spotify links. Scenes mov
 
 ---
 
-*Last updated: 2026-09-30*
+*Last updated: 2026-10-10*
