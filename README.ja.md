@@ -8,7 +8,7 @@
 
 ここでの分類は**厳密なジャンル名ではありません**。次の2つを根拠にしています。
 
-1. Apple Music「似ているアーティスト」グラフの孤立（Soft Melodic と Wa Spiritual はおおよさ2ホップ以内でほぼ交差しない）
+1. Apple Music「似ているアーティスト」グラフの孤立（Soft Melodic と Wa Spiritual はおおよそ2ホップ以内でほぼ交差しない）
 2. 聴き分けプレイリスト — 先に Apple Music、あれば Spotify（[shvyac.female.ai](https://music.apple.com/jp/playlist/shvyac-female-ai/pl.u-ZmblKjaczA1oGB) → Spotify [shv.female.ai](https://open.spotify.com/playlist/3I8vRt3wJHYR9Ze86gIoyW)、[shvyac.hard.ai](https://music.apple.com/jp/playlist/shvyac-hard-ai/pl.u-PDb4o6VukaG9Xq)、[shvyac.male.ai](https://music.apple.com/jp/playlist/shvyac-male-ai/pl.u-Ymb0opqhxl39Xv)）
 
 プレイリスト名の接頭辞: `shvyac.` は Apple Music、`shv.` は Spotify(例: `shvyac.female.ai` ↔ `shv.female.ai`)。
