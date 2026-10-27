@@ -4,6 +4,8 @@
 
 Apple Music and Spotify links for emerging “ghost artist” / delivery-native indie scenes — often AI-assisted or AI-forward projects with thin public identity.
 
+⭐ badges show live GitHub star counts (via shields.io); release badges show the date of the latest GitHub release (YYYY/MM/DD, as of the last refresh); last-commit badges show live commit activity (via shields.io).
+
 ## How clustering works
 
 Clusters are **not** strict genre labels. They come from:
@@ -200,7 +202,7 @@ Male vocals in Kansai-ben about pride, work, marriage and not giving up. Covers 
 
 ## Generation tools
 
-Which AI tools can make songs like these: commercial text-to-song (Suno v6, Lyria 3.5, ElevenLabs Music, Mureka…), open-source models on GitHub (ACE-Step 1.5, YuE2, MiniMax Music 3…), AI singing synths (Synthesizer V, VOCALOID7, NEUTRINO, VoiSona…), and post-production. ⭐ badges there show live GitHub star counts (via shields.io). → **[TOOLS.md](TOOLS.md)**
+Which AI tools can make songs like these: commercial text-to-song (Suno v6, Lyria 3.5, ElevenLabs Music, Mureka…), open-source models on GitHub (ACE-Step 1.5, YuE2, MiniMax Music 3…), AI singing synths (Synthesizer V, VOCALOID7, NEUTRINO, VoiSona…), and post-production. → **[TOOLS.md](TOOLS.md)**
 
 ---
 
@@ -262,7 +264,7 @@ Community-maintained discovery list of Apple Music and Spotify links. Scenes mov
 
 ---
 
-*Last updated: 2026-10-10*
+*Last updated: 2026-10-27*
 
 ---
 
@@ -289,6 +291,7 @@ All curated lists maintained by [shvyac](https://github.com/shvyac):
 - [awesome-online-services](https://github.com/shvyac/awesome-online-services) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-online-services?style=flat&label=%E2%AD%90)
 - [awesome-open-source-solvers](https://github.com/shvyac/awesome-open-source-solvers) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-open-source-solvers?style=flat&label=%E2%AD%90)
 - [awesome-osint-ai](https://github.com/shvyac/awesome-osint-ai) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-osint-ai?style=flat&label=%E2%AD%90)
+- [awesome-quantum](https://github.com/shvyac/awesome-quantum) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-quantum?style=flat&label=%E2%AD%90)
 - [awesome-redmine-ai](https://github.com/shvyac/awesome-redmine-ai) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-redmine-ai?style=flat&label=%E2%AD%90)
 - [awesome-requirements-system-ai](https://github.com/shvyac/awesome-requirements-system-ai) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-requirements-system-ai?style=flat&label=%E2%AD%90)
 - [awesome-trading-stock](https://github.com/shvyac/awesome-trading-stock) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-trading-stock?style=flat&label=%E2%AD%90)

@@ -4,6 +4,8 @@
 
 配信ネイティブ／いわゆる「ゴーストアーティスト」周辺の indie シーン向け Apple Music・Spotify リンク集。公開プロフィールが薄い、生成AIを前面または補助に使うプロジェクトが多いです。
 
+⭐ バッジは GitHub のスター数をリアルタイム表示します(shields.io)。release バッジは GitHub の最新リリース日(YYYY/MM/DD、最終更新時点)を示します。last commit バッジは最新コミット日をリアルタイム表示します(shields.io)。
+
 ## クラスタの考え方
 
 ここでの分類は**厳密なジャンル名ではありません**。次の2つを根拠にしています。
@@ -200,7 +202,7 @@
 
 ## 生成ツール
 
-こうした曲を作れる AI ツールをまとめています。商用のテキスト→楽曲生成(Suno v6、Lyria 3.5、ElevenLabs Music、Mureka など)、GitHub のオープンソースモデル(ACE-Step 1.5、YuE2、MiniMax Music 3 など)、AI 歌声合成(Synthesizer V、VOCALOID7、NEUTRINO、VoiSona など)、仕上げ用のツール。⭐ バッジは GitHub のスター数をリアルタイム表示します(shields.io)。→ **[TOOLS.ja.md](TOOLS.ja.md)**
+こうした曲を作れる AI ツールをまとめています。商用のテキスト→楽曲生成(Suno v6、Lyria 3.5、ElevenLabs Music、Mureka など)、GitHub のオープンソースモデル(ACE-Step 1.5、YuE2、MiniMax Music 3 など)、AI 歌声合成(Synthesizer V、VOCALOID7、NEUTRINO、VoiSona など)、仕上げ用のツール。→ **[TOOLS.ja.md](TOOLS.ja.md)**
 
 ---
 
@@ -262,7 +264,7 @@ A/B/C に加えて、分かるときだけ付ける:
 
 ---
 
-*最終更新: 2026-10-10*
+*最終更新: 2026-10-27*
 
 ---
 
@@ -289,6 +291,7 @@ A/B/C に加えて、分かるときだけ付ける:
 - [awesome-online-services](https://github.com/shvyac/awesome-online-services) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-online-services?style=flat&label=%E2%AD%90)
 - [awesome-open-source-solvers](https://github.com/shvyac/awesome-open-source-solvers) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-open-source-solvers?style=flat&label=%E2%AD%90)
 - [awesome-osint-ai](https://github.com/shvyac/awesome-osint-ai) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-osint-ai?style=flat&label=%E2%AD%90)
+- [awesome-quantum](https://github.com/shvyac/awesome-quantum) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-quantum?style=flat&label=%E2%AD%90)
 - [awesome-redmine-ai](https://github.com/shvyac/awesome-redmine-ai) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-redmine-ai?style=flat&label=%E2%AD%90)
 - [awesome-requirements-system-ai](https://github.com/shvyac/awesome-requirements-system-ai) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-requirements-system-ai?style=flat&label=%E2%AD%90)
 - [awesome-trading-stock](https://github.com/shvyac/awesome-trading-stock) ![GitHub stars](https://img.shields.io/github/stars/shvyac/awesome-trading-stock?style=flat&label=%E2%AD%90)
