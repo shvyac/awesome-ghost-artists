@@ -1,0 +1,4 @@
+module CalcCore {
+    header "calc_core.h"
+    export *
+}
